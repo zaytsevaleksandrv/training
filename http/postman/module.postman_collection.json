@@ -1,0 +1,173 @@
+{
+	"info": {
+		"name": "module",
+		"_postman_id": "aacae54d-d802-f8ad-0616-20c7695c40ad",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://fakerestapi.azurewebsites.net/api/Authors",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/Authors",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Authors"
+					]
+				},
+				"description": "GET /api/Authors"
+			},
+			"response": []
+		},
+		{
+			"name": "https://fakerestapi.azurewebsites.net/Help/api/Authors",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Author xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/FakeRestAPI.Web.Models\">\r\n  <FirstName>sample string 3</FirstName>\r\n  <ID>1</ID>\r\n  <IDBook>2</IDBook>\r\n  <LastName>sample string 4</LastName>\r\n</Author>"
+				},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/Authors/",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Authors",
+						""
+					]
+				},
+				"description": "POST /api/Authors"
+			},
+			"response": []
+		},
+		{
+			"name": "https://fakerestapi.azurewebsites.net/api/Authors/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/Authors/1",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Authors",
+						"1"
+					]
+				},
+				"description": "DELETE"
+			},
+			"response": []
+		},
+		{
+			"name": "https://fakerestapi.azurewebsites.net/api/Authors",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ID\": 1,\r\n  \"IDBook\": 2,\r\n  \"FirstName\": \"sample string 3\",\r\n  \"LastName\": \"sample string 4\"\r\n}"
+				},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/Authors/1",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Authors",
+						"1"
+					]
+				},
+				"description": "PUT /api/Authors/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "https://auth-demo.aerobatic.io/protected-standard/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "aerobatic",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "aerobatic",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://auth-demo.aerobatic.io/protected-standard/",
+					"protocol": "https",
+					"host": [
+						"auth-demo",
+						"aerobatic",
+						"io"
+					],
+					"path": [
+						"protected-standard",
+						""
+					]
+				},
+				"description": "GET доп задание"
+			},
+			"response": []
+		}
+	]
+}
