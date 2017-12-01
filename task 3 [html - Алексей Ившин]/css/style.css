@@ -1,0 +1,141 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#h1 {
+  border-bottom: 1px solid #eee;
+  padding: 0 0 15px;
+  margin: 15px 0 30px;
+}
+
+h4 {
+  margin: 0 0 10px;
+}
+
+#table {
+  border-collapse: collapse;
+  display: inline-block;
+}
+
+tr td {
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+tr:last-child td {
+  vertical-align: top;
+  border-bottom: 0;
+  padding: 10px 0;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+#photo {
+  width: 250px;
+  height: 250px;
+  background: url('../image/my_photo.jpg') center center / cover no-repeat;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 50px 0 0;
+}
+
+#blockquote {
+  border-left: 4px solid #eee;
+  margin: 33px 0;
+  padding: 0 0 0 15px;
+}
+
+#blockquote p {
+  margin: 0;
+}
+
+#nav {
+  border-bottom: 1px solid #eee;
+  padding: 0 0 30px;
+  margin: 0 0 33px;
+}
+
+#nav ol {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav ol li {
+  position: relative;
+}
+
+#nav ol ul {
+    display: none;
+    background: #CFD8DC;
+    z-index: 1;
+    width: 100px;
+    padding: 5px 20px;
+    list-style-type: none;
+}
+
+#nav ol>li:hover ul {
+    display: block;
+    position: absolute;
+}
+
+#imgbase64one {
+  border-top: 4px dashed #FFEA00;
+  border-bottom: 2px solid #fff;
+  background: #000;
+  margin: 33px 0 0;
+}
+
+#imgbase64one img {
+  animation: base64one 10s infinite ease-in-out;
+}
+
+#imgbase64two {
+  border-top: 2px solid #fff;
+  border-bottom: 4px dashed #FFEA00;
+  background: #000;
+  text-align: right;
+  margin: 0 0 33px;
+}
+
+#imgbase64two img {
+  animation: base64two 10s infinite ease-in-out;
+}
+
+@keyframes base64one {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+@keyframes base64two {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1000px);
+  }
+}
+
+#blocktreeline {
+  display: flex;
+  flex-direction: column;
+}
+
+#fieldset div{
+  margin: 10px 0 0;
+}
+
+label {
+  font-weight: 600;
+}
+
+#back {
+  display: block;
+  margin: 0 0 20px;
+}
