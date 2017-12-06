@@ -1,0 +1,46 @@
+.post {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 22px 33px;
+  margin: 15px;
+  transition: .3s ease;
+
+  &:hover {
+    box-shadow: 0px 5px 30px #bdc3c7;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+  }
+
+  &__info {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__date {
+    color: #7f8c8d;
+
+    &-title {
+      padding: 0 5px 0 0;
+    }
+  }
+  &__author {
+    color: #7f8c8d;
+
+    &-title {
+      padding: 0 5px 0 0;
+    }
+  }
+}
