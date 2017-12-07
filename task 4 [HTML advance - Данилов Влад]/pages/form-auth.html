@@ -18,15 +18,35 @@
       <h1 class="header__title">Авторизуйтесь</h1>
   </header>
   <main class="main">
-    <section class="wrapper__form-auth">
+    <div class="wrapper__form-auth">
       <form action="/" class="form-auth">
         <fieldset class="form-auth__fieldset">
-          <input class="form-auth__input" name="email" type="email" placeholder="Введите email" required autofocus>
-          <input class="form-auth__input" name="password" type="password" placeholder="Введите пароль" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" required title="8 или более символов. Должны быть заглавные, строчные буквы и хотя бы одна цифра.">
+          <input
+            class="form-auth__input"
+            name="email"
+            type="email"
+            placeholder="Введите email"
+            autofocus
+            required
+          >
+          <input
+            class="form-auth__input"
+            name="password"
+            type="password"
+            placeholder="Введите пароль"
+            title="8 или более символов. Должны быть заглавные, строчные буквы и хотя бы одна цифра."
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+            required
+          >
         </fieldset>
-        <button class="form-auth__btn-send-data" type="submit">Войти</button>
+        <button
+          class="form-auth__btn-send-data"
+          type="submit"
+        >
+          Войти
+        </button>
       </form>
-    </section>
+    </div>
   </main>
   <footer class="footer">
     <p>
