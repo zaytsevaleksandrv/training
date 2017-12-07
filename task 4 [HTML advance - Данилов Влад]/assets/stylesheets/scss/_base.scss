@@ -5,6 +5,9 @@ body {
   font-weight: 400;
   background: #fafafa;
   margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1 {

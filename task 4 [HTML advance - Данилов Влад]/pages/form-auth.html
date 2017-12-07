@@ -12,14 +12,21 @@
   <header class="header">
       <h1 class="header__title">Авторизуйтесь</h1>
   </header>
-  <section class="wrapper__form-auth">
-    <form action="/" class="form-auth">
-      <fieldset class="form-auth__fieldset">
-        <input class="form-auth__input" name="email" type="email" placeholder="Введите email" required autofocus>
-        <input class="form-auth__input" name="password" type="password" placeholder="Введите пароль" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="8 или более символов">
-      </fieldset>
-      <button class="form-auth__btn-send-data" type="submit">Войти</button>
-    </form>
-  </section>
+  <main class="main">
+    <section class="wrapper__form-auth">
+      <form action="/" class="form-auth">
+        <fieldset class="form-auth__fieldset">
+          <input class="form-auth__input" name="email" type="email" placeholder="Введите email" required autofocus>
+          <input class="form-auth__input" name="password" type="password" placeholder="Введите пароль" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" required title="8 или более символов. Должны быть заглавные, строчные буквы и хотя бы одна цифра.">
+        </fieldset>
+        <button class="form-auth__btn-send-data" type="submit">Войти</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>
+      © 2017 zaytsevaleksandrv
+    </p>
+  </footer>
 </body>
 </html>
