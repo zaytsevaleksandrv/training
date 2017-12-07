@@ -15,8 +15,22 @@ h1 {
   line-height: 1;
 }
 
+h3 {
+  margin: 0 0 15px 0;
+}
+
 p {
   margin: 0 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+  transition: .3s ease;
+
+  &:hover {
+    color: #333;
+  }
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
