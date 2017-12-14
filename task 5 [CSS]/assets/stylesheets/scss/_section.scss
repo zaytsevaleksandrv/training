@@ -1,0 +1,25 @@
+.wrapper {
+
+  &__form-search {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__post {
+    display: flex;
+    margin: 33px auto 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__form-auth {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+  }
+}

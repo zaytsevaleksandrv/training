@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="https://github.com/zaytsevaleksandrv/training">
+  <title>HTML advance</title>
+  <base target="_blank" />
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+  <!-- style -->
+  <link rel="stylesheet" href="../assets/stylesheets/main.css">
+
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">News</h1>
+
+    <div class="wrapper__form-search">
+      <form
+        action="/"
+        class="form-search"
+      >
+        <fieldset class="form-search__fieldset">
+            <input
+              class="form-search__input"
+              name="search"
+              type="text"
+              placeholder="Введите запрос"
+              autofocus
+            />
+        </fieldset>
+        <button
+          class="form-search__btn-send-data"
+          type="submit"
+        >
+          Поиск
+        </button>
+      </form>
+    </div>
+
+    <div>
+      <a
+        class="btn-enter"
+        href="form-auth.html"
+      >
+        Войти
+      </a>
+      <a
+        class="btn-enter"
+        href="form-auth.html"
+      >
+        Регистрация
+      </a>
+    </div>
+  </header>
+  <main class="main main--flex">
+      <nav class="nav">
+        <h3>Навигация</h3>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/">Всё</a>
+          </li>
+          <li class="nav__item">
+            <a href="/">Аудио</a>
+          </li>
+          <li class="nav__item">
+            <a href="/">Видео</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="wrapper__post">
+        <article class="post">
+          <h2 class="post__title">Когда за тобой зашли друзья</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam aperiam sequi incidunt enim dolores facilis. Aliquid repudiandae eveniet, sed tempore ducimus nostrum beatae, amet ipsam libero quia porro aspernatur ea?
+            </p>
+            <figure class="post__video-wrapper">
+              <video
+                class="post__video"
+                src="../assets/media/video/1.mp4"
+                poster="../assets/media/img/1.jpg"
+                onplay="onPlayFunction()"
+                onpause="onPauseFunction()"
+                controls
+              ></video>
+              <figcaption class="post__video-description">
+                Наверное дома никого нет...
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              user
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Братва</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias harum, recusandae similique quae ad quisquam, voluptatum veniam cupiditate voluptatibus et, veritatis aut omnis obcaecati. Odit corrupti exercitationem vero nesciunt natus!
+            </p>
+            <figure class="post__video-wrapper">
+              <video
+                class="post__video"
+                src="../assets/media/video/3.mp4"
+                poster="../assets/media/img/3.jpg"
+                onplay="onPlayFunction()"
+                onpause="onPauseFunction()"
+                controls
+              ></video>
+              <figcaption class="post__video-description">
+                Бери ношу по себе, чтобы не падать при ходьбе
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              user
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Шашлычок</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores delectus sint libero corporis odio voluptatem quia perferendis deleniti nesciunt consequatur, enim quas, velit optio quae cum cupiditate hic ut neque.
+            </p>
+            <figure class="post__video-wrapper">
+              <video
+                class="post__video"
+                src="../assets/media/video/2.mp4"
+                poster="../assets/media/img/2.jpg"
+                onplay="onPlayFunction()"
+                onpause="onPauseFunction()"
+                controls
+                ></video>
+              <figcaption class="post__video-description">
+                Да что вы понимаете в шашлыке!
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              user
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Разочарование</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ducimus molestiae tempora, aspernatur adipisci rerum impedit nesciunt dignissimos explicabo a asperiores reiciendis quasi sequi in laudantium itaque nam, alias est!
+            </p>
+            <figure class="post__video-wrapper">
+              <video
+                class="post__video"
+                src="../assets/media/video/4.mp4"
+                poster="../assets/media/img/4.jpg"
+                onplay="onPlayFunction()"
+                onpause="onPauseFunction()"
+                controls
+              ></video>
+              <figcaption class="post__video-description">
+                Смотрите я сделал!!!
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              user
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Страх</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eaque nostrum sunt ut repellendus, perferendis sequi tempore ea deserunt, quidem vel voluptas, impedit dolore sint ducimus voluptatibus rem dolor excepturi.
+            </p>
+            <figure class="post__audio-wrapper">
+              <audio
+                 class="post__audio"
+                 src="https://coubsecure-s.akamaihd.net/get/b39/p/coub/simple/cw_looped_audio/878ec926d6c/471e2a9fc30383ee890e3/med_1489212887_med.mp3"
+                 onplay="onPlayFunction()"
+                 onpause="onPauseFunction()"
+                 type="audio/mpeg"
+                 controls
+               ></audio>
+              <figcaption class="post__audio-description">
+                Страха в реальности нет. <br />
+                Страх живет в одном закоулке — в наших мыслях о будущем.<br />
+                Страх — это плод нашего воображения, он заставляет нас бояться того, чего нет и вероятно не будет никогда — это ведь чистое безумие.<br />
+                Опасность — это реальный факт, но страх — это ваш выбор.
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              user
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Nooooooooooooooooo</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae architecto, assumenda! Saepe veniam laboriosam, delectus maiores sequi quibusdam repellendus quam eveniet nobis minima consequuntur odio quo iure natus, sed ipsa.
+            </p>
+            <figure class="post__audio-wrapper">
+              <audio
+                 class="post__audio"
+                 src="https://cs7-4v4.vk-cdn.net/p14/66c755dd160b7e.mp3"
+                 onplay="onPlayFunction()"
+                 onpause="onPauseFunction()"
+                 type="audio/mpeg"
+                 controls
+              ></audio>
+              <figcaption class="post__audio-description">
+                No description
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              coub
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Post Malone - rockstar ft. 21 Savage</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, repudiandae. Suscipit officiis illo totam placeat itaque facilis similique adipisci voluptate consequatur natus vel perferendis neque amet iusto, eius consequuntur. Eveniet.
+            </p>
+            <figure class="post__audio-wrapper">
+              <audio
+                 class="post__audio"
+                 src="https://cs7-4v4.vk-cdn.net/p14/66c755dd160b7e.mp3"
+                 onplay="onPlayFunction()"
+                 onpause="onPauseFunction()"
+                 type="audio/mpeg"
+                 controls
+              ></audio>
+              <figcaption class="post__audio-description">
+                Ayy, I've been fuckin' hoes and poppin' pillies<br />
+                Man, I feel just like a rockstar (star)<br />
+                Ayy, ayy, all my brothers got that gas<br />
+                And they always be smokin' like a Rasta…
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              Post Malone
+            </p>
+          </footer>
+        </article>
+
+        <article class="post">
+          <h2 class="post__title">Message</h2>
+          <div class="post__lead">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi sed corporis in praesentium doloribus ut repellat obcaecati odit unde optio sequi itaque enim deserunt repellendus, repudiandae qui officia maiores consequuntur?
+            </p>
+            <figure class="post__audio-wrapper">
+              <audio
+                 class="post__audio"
+                 src="https://cs7-4v4.vk-cdn.net/p14/66c755dd160b7e.mp3"
+                 onplay="onPlayFunction()"
+                 onpause="onPauseFunction()"
+                 type="audio/mpeg"
+                 controls
+              ></audio>
+              <figcaption class="post__audio-description">
+                Вам пришло сообщение, вы слышали?
+              </figcaption>
+            </figure>
+          </div>
+          <footer class="post__info">
+            <time
+              datetime="2017-12-06"
+              class="post__date"
+            >
+              <span class="post__date-title">Дата:</span>
+              06.12.2017
+            </time>
+            <p class="post__author">
+              <span class="post__author-title">Автор:</span>
+              vk
+            </p>
+          </footer>
+        </article>
+      </div>
+
+      <aside class="ad-unit">
+        <h3>На правах рекламы</h3>
+        <div class="ad-unit__img"></div>
+        <div class="ad-unit__img"></div>
+        <div class="ad-unit__img"></div>
+      </aside>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2017 zaytsevaleksandrv
+    </p>
+  </footer>
+
+  <!-- script -->
+  <script src="../assets/script/script.js"></script>
+</body>
+</html>

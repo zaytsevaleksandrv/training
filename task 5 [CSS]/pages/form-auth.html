@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Auth form</title>
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+  <!-- style -->
+  <link rel="stylesheet" href="../assets/stylesheets/main.css">
+
+</head>
+<body>
+  <header class="header">
+      <h1 class="header__title">Авторизуйтесь</h1>
+  </header>
+  <main class="main">
+    <div class="wrapper__form-auth">
+      <form action="/" class="form-auth">
+        <fieldset class="form-auth__fieldset">
+          <input
+            class="form-auth__input"
+            name="email"
+            type="email"
+            placeholder="Введите email"
+            autofocus
+            required
+          >
+          <input
+            class="form-auth__input"
+            name="password"
+            type="password"
+            placeholder="Введите пароль"
+            title="8 или более символов. Должны быть заглавные, строчные буквы и хотя бы одна цифра."
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+            required
+          >
+        </fieldset>
+        <button
+          class="form-auth__btn-send-data"
+          type="submit"
+        >
+          Войти
+        </button>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>
+      © 2017 zaytsevaleksandrv
+    </p>
+  </footer>
+</body>
+</html>

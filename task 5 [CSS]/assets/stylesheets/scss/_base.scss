@@ -1,0 +1,51 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  background: #fafafa;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 25px;
+  line-height: 1;
+}
+
+h3 {
+  margin: 0 0 15px 0;
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+  transition: .3s ease;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: 600;
+  font-size: 16px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-weight: 600;
+  font-size: 16px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-weight: 600;
+  font-size: 16px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-weight: 600;
+  font-size: 16px;
+}
