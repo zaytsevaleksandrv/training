@@ -1,10 +1,14 @@
 .main {
   flex: 1;
 
-  &--flex {
-    display: -webkit-flex;
-    display: -ms-flex;
+  &_flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: stretch;
   }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }

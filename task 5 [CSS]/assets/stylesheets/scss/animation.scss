@@ -1,0 +1,250 @@
+body {
+	background: #b4e0e1;
+}
+.plane {
+	width: 70px;
+	background: #2abfd4;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 50px;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	position: relative;
+
+	&--one {
+		transition: 0.3s ease-in-out;
+		animation: flight-plane-one 5s ease-in-out forwards;
+		animation-direction: normal;
+	}
+
+	&--two {
+		transition: 0.3s ease-in-out;
+		animation: flight-plane-two 4.9s ease-in-out forwards;
+		animation-direction: normal;
+	}
+
+	&--three {
+		transition: 0.3s ease-in-out;
+		animation: flight-plane-three 5s ease-in-out forwards;
+		animation-direction: normal;
+	}
+
+	&__left-wing{
+		width: 15px;
+		height: 45px;
+		background: #2abfd4;
+		transform: rotate(-50deg);
+		position: relative;
+		left: 5px;
+		top: -15px;
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+		z-index: 1;
+	}
+
+	&__right-wing {
+		width: 15px;
+		height: 45px;
+		background: #2abfd4;
+		transform: rotate(50deg);
+		position: relative;
+		left: -10px;
+		top: 10px;
+		border-bottom-left-radius: 50%;
+		border-bottom-right-radius: 50%;
+		z-index: 1;
+	}
+
+	&__tail {
+		width: 15px;
+		height: 15px;
+		background: #2abfd4;
+		position: absolute;
+		left: -5px;
+		top: -7px;
+		transform: rotate(-30deg);
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+	}
+
+	&__line-engine-left {
+		width: 10px;
+		height: 1px;
+		background: #fff6;
+		position: absolute;
+		left: 8px;
+		top: -10px;
+		box-shadow: -5px 0 5px 2px #fff;
+		transition: 0.3s ease-in-out;
+		animation: line-engine-plane 3s ease-in-out infinite;
+		animation-direction: normal;
+	}
+	&__line-engine-right {
+		width: 10px;
+		height: 1px;
+		background: #fff6;
+		position: absolute;
+		left: 8px;
+		top: 23px;
+		box-shadow: -5px 0 5px 2px #fff;
+		transition: 0.3s ease-in-out;
+		animation: line-engine-plane 3s ease-in-out infinite;
+		animation-direction: normal;
+	}
+
+	&__skydiver {
+		width: 5px;
+		height: 10px;
+		background: #E61875;
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+		opacity: 0;
+		z-index: 1;
+		transition: 0.3s ease-in-out;
+		animation: skydiver 10s ease-in-out;
+		animation-delay: 4s;
+		position: relative;
+		left: -40px;
+
+		&:after {
+			content: '';
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: #224687;
+			position: absolute;
+			top: -5px;
+		}
+	}
+}
+
+.skydiver {
+	&__parachute{
+		width: 40px;
+		height: 20px;
+		background: #000;
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+		border-bottom-left-radius: 10%;
+		border-bottom-right-radius: 10%;
+		position: absolute;
+		top: -35px;
+		left: -17px;
+		transition: 0.3s ease-in-out;
+		animation: parachute 5s ease-in-out;
+		animation-delay: 3s;
+		animation-direction: normal;
+
+		&:after{
+			content: '';
+			width: 20px;
+			height: 1px;
+			position: absolute;
+			top: 25px;
+			left: 0;
+			background: #000;
+			transform: rotate(40deg);
+		}
+
+		&:before{
+			content: '';
+			width: 20px;
+			height: 1px;
+			position: absolute;
+			top: 25px;
+			right: 0;
+			background: #000;
+			transform: rotate(-40deg);
+		}
+	}
+}
+
+@keyframes flight-plane-one {
+	0% {
+		transform: matrix(1, 0, 0, 1, -200, 0);
+	}
+	30% {
+		transform: matrix(1, 0, 0, 1, 500, 140);
+	}
+	100% {
+		transform: matrix(1, 0, 0, 1, 1000, 140);
+	}
+}
+
+@keyframes flight-plane-two {
+	0% {
+		transform: matrix(1, 0, 0, 1, -200, 0);
+	}
+	30% {
+		transform: matrix(1, 0, 0, 1, 510, 0);
+	}
+	100% {
+		transform: matrix(1, 0, 0, 1, 1100, 0);
+	}
+}
+
+@keyframes flight-plane-three {
+	0% {
+		transform: matrix(1, 0, 0, 1, -200, 0);
+	}
+	30% {
+		transform: matrix(1, 0, 0, 1, 500, -140);
+	}
+	100% {
+		transform: matrix(1, 0, 0, 1, 1000, -140);
+	}
+}
+
+@keyframes line-engine-plane {
+	0% {
+		transform: scaleX(1);
+	}
+	15% {
+		transform: scaleX(2);
+	}
+	30% {
+		transform: scaleX(1);
+	}
+	45% {
+		transform: scaleX(2);
+	}
+	60% {
+		transform: scaleX(1);
+	}
+	75% {
+		transform: scaleX(2);
+	}
+	90% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(2);
+	}
+}
+
+@keyframes skydiver{
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(500px) translateX(-400px);
+	}
+}
+
+@keyframes parachute{
+	0% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

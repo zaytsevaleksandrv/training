@@ -9,7 +9,7 @@
   border-radius: 10px;
   padding: 22px 33px;
   margin: 0 15px 30px;
-  transition: .3s ease;
+  transition: box-shadow .3s ease;
 
   &:hover {
     box-shadow: 0px 5px 30px #bdc3c7;
@@ -42,5 +42,87 @@
     &-title {
       padding: 0 5px 0 0;
     }
+  }
+}
+
+.b-category {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  transition: box-shadow .3s ease;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0px 5px 30px #bdc3c7;
+    cursor: pointer;
+
+    & .b-category__screen-saver {
+      transform: scale(1.03);
+    }
+  }
+
+  &__screen-saver {
+    background: url('http://placehold.it/200x200') center center/ cover no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0 0 10px;
+    border-radius: 10px;
+    transition: transform .3s ease;
+  }
+}
+.b-product {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  transition: box-shadow .3s ease;
+  border-radius: 10px;
+  width: 170px;
+
+  &:hover {
+    box-shadow: 0px 5px 30px #bdc3c7;
+    cursor: pointer;
+
+    & .b-product__screen-saver {
+      transform: scale(1.03);
+    }
+  }
+
+  &__screen-saver {
+    background: url('http://placehold.it/150x150') center center/ cover no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 0 10px;
+    border-radius: 10px;
+    transition: transform .3s ease;
+  }
+
+  &__screen-saver-list {
+    background: url('http://placehold.it/200x200') center center/ cover no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0 20px 0 0;
+    border-radius: 10px;
+    transition: transform .3s ease;
+  }
+
+  &__price{
+    color: #50e3c2;
+    &-list {
+      display: inline-block;
+      color: #ff2f51;
+      margin: 0 0 0 15px;
+    }
+  }
+
+  &__description-list {
+    display: none;
+  }
+
+  .btn-enter {
+    display: none;
   }
 }

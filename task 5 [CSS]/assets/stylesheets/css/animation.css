@@ -1,0 +1,335 @@
+body {
+  background: #b4e0e1; }
+
+.plane {
+  width: 70px;
+  background: #2abfd4;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 50px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  position: relative; }
+  .plane--one {
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: flight-plane-one 5s ease-in-out forwards;
+    animation: flight-plane-one 5s ease-in-out forwards;
+    -webkit-animation-direction: normal;
+    animation-direction: normal; }
+  .plane--two {
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: flight-plane-two 4.9s ease-in-out forwards;
+    animation: flight-plane-two 4.9s ease-in-out forwards;
+    -webkit-animation-direction: normal;
+    animation-direction: normal; }
+  .plane--three {
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: flight-plane-three 5s ease-in-out forwards;
+    animation: flight-plane-three 5s ease-in-out forwards;
+    -webkit-animation-direction: normal;
+    animation-direction: normal; }
+  .plane__left-wing {
+    width: 15px;
+    height: 45px;
+    background: #2abfd4;
+    -webkit-transform: rotate(-50deg);
+    -ms-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    position: relative;
+    left: 5px;
+    top: -15px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    z-index: 1; }
+  .plane__right-wing {
+    width: 15px;
+    height: 45px;
+    background: #2abfd4;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(50deg);
+    position: relative;
+    left: -10px;
+    top: 10px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 1; }
+  .plane__tail {
+    width: 15px;
+    height: 15px;
+    background: #2abfd4;
+    position: absolute;
+    left: -5px;
+    top: -7px;
+    -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%; }
+  .plane__line-engine-left {
+    width: 10px;
+    height: 1px;
+    background: #fff6;
+    position: absolute;
+    left: 8px;
+    top: -10px;
+    -webkit-box-shadow: -5px 0 5px 2px #fff;
+    box-shadow: -5px 0 5px 2px #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: line-engine-plane 3s ease-in-out infinite;
+    animation: line-engine-plane 3s ease-in-out infinite;
+    -webkit-animation-direction: normal;
+    animation-direction: normal; }
+  .plane__line-engine-right {
+    width: 10px;
+    height: 1px;
+    background: #fff6;
+    position: absolute;
+    left: 8px;
+    top: 23px;
+    -webkit-box-shadow: -5px 0 5px 2px #fff;
+    box-shadow: -5px 0 5px 2px #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: line-engine-plane 3s ease-in-out infinite;
+    animation: line-engine-plane 3s ease-in-out infinite;
+    -webkit-animation-direction: normal;
+    animation-direction: normal; }
+  .plane__skydiver {
+    width: 5px;
+    height: 10px;
+    background: #E61875;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: skydiver 10s ease-in-out;
+    animation: skydiver 10s ease-in-out;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    position: relative;
+    left: -40px; }
+    .plane__skydiver:after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #224687;
+      position: absolute;
+      top: -5px; }
+
+.skydiver__parachute {
+  width: 40px;
+  height: 20px;
+  background: #000;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  position: absolute;
+  top: -35px;
+  left: -17px;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-animation: parachute 5s ease-in-out;
+  animation: parachute 5s ease-in-out;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-direction: normal;
+  animation-direction: normal; }
+  .skydiver__parachute:after {
+    content: '';
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #000;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg); }
+  .skydiver__parachute:before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: #000;
+    -webkit-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg); }
+
+@-webkit-keyframes flight-plane-one {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 500, 140);
+    transform: matrix(1, 0, 0, 1, 500, 140); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1000, 140);
+    transform: matrix(1, 0, 0, 1, 1000, 140); } }
+
+@keyframes flight-plane-one {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 500, 140);
+    transform: matrix(1, 0, 0, 1, 500, 140); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1000, 140);
+    transform: matrix(1, 0, 0, 1, 1000, 140); } }
+
+@-webkit-keyframes flight-plane-two {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 510, 0);
+    transform: matrix(1, 0, 0, 1, 510, 0); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1100, 0);
+    transform: matrix(1, 0, 0, 1, 1100, 0); } }
+
+@keyframes flight-plane-two {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 510, 0);
+    transform: matrix(1, 0, 0, 1, 510, 0); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1100, 0);
+    transform: matrix(1, 0, 0, 1, 1100, 0); } }
+
+@-webkit-keyframes flight-plane-three {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 500, -140);
+    transform: matrix(1, 0, 0, 1, 500, -140); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1000, -140);
+    transform: matrix(1, 0, 0, 1, 1000, -140); } }
+
+@keyframes flight-plane-three {
+  0% {
+    -webkit-transform: matrix(1, 0, 0, 1, -200, 0);
+    transform: matrix(1, 0, 0, 1, -200, 0); }
+  30% {
+    -webkit-transform: matrix(1, 0, 0, 1, 500, -140);
+    transform: matrix(1, 0, 0, 1, 500, -140); }
+  100% {
+    -webkit-transform: matrix(1, 0, 0, 1, 1000, -140);
+    transform: matrix(1, 0, 0, 1, 1000, -140); } }
+
+@-webkit-keyframes line-engine-plane {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  15% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  30% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  45% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  60% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  75% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  90% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  100% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); } }
+
+@keyframes line-engine-plane {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  15% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  30% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  45% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  60% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  75% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); }
+  90% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+  100% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2); } }
+
+@-webkit-keyframes skydiver {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(500px) translateX(-400px);
+    transform: translateY(500px) translateX(-400px); } }
+
+@keyframes skydiver {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(500px) translateX(-400px);
+    transform: translateY(500px) translateX(-400px); } }
+
+@-webkit-keyframes parachute {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes parachute {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
