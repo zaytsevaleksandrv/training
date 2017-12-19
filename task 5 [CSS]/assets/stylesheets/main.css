@@ -324,11 +324,11 @@ a {
     border: 1px solid #bbb;
     text-decoration: none; }
 
-.form-auth__link-open-reg-popup, .form-auth__link-open-auth-popup {
+.form-auth__link-open-reg-popup, .form-auth__link-open-auth-popup, .form-reg__link-open-reg-popup, .form-reg__link-open-auth-popup {
   -ms-flex-item-align: end;
   align-self: flex-end; }
 
-.form-auth__close {
+.form-auth__close, .form-reg__close {
   border: none;
   width: 20px;
   height: 20px;
@@ -338,7 +338,7 @@ a {
   -ms-flex-item-align: end;
   align-self: flex-end;
   margin: 0 0 10px; }
-  .form-auth__close:before, .form-auth__close:after {
+  .form-auth__close:before, .form-auth__close:after, .form-reg__close:before, .form-reg__close:after {
     content: '';
     width: 20px;
     height: 1px;
@@ -348,18 +348,18 @@ a {
     -webkit-transition: background .3s ease;
     -o-transition: background .3s ease;
     transition: background .3s ease; }
-  .form-auth__close:before {
+  .form-auth__close:before, .form-reg__close:before {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
-  .form-auth__close:after {
+  .form-auth__close:after, .form-reg__close:after {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
-  .form-auth__close:hover::after, .form-auth__close:hover::before {
+  .form-auth__close:hover::after, .form-auth__close:hover::before, .form-reg__close:hover::after, .form-reg__close:hover::before {
     background: #000; }
 
-.form-auth__btn-send-data {
+.form-auth__btn-send-data, .form-reg__btn-send-data {
   display: inline-block;
   padding: 15px;
   border: 1px solid #ddd;
@@ -371,10 +371,10 @@ a {
   -webkit-transition: .3s ease;
   -o-transition: .3s ease;
   transition: .3s ease; }
-  .form-auth__btn-send-data:focus {
+  .form-auth__btn-send-data:focus, .form-reg__btn-send-data:focus {
     outline: unset;
     border: 1px solid #4285f4; }
-  .form-auth__btn-send-data:hover {
+  .form-auth__btn-send-data:hover, .form-reg__btn-send-data:hover {
     color: #333;
     border: 1px solid #bbb; }
 
@@ -406,7 +406,7 @@ a {
     outline: unset;
     border: 1px solid #4285f4; }
 
-.form-auth__input {
+.form-auth__input, .form-reg__input {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 15px;
@@ -417,7 +417,7 @@ a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 0 15px; }
-  .form-auth__input:focus {
+  .form-auth__input:focus, .form-reg__input:focus {
     outline: unset;
     border: 1px solid #4285f4; }
 
@@ -438,7 +438,7 @@ a {
     margin: 0;
     width: 100%; }
 
-.form-auth {
+.form-auth, .form-reg {
   width: 30%;
   display: -webkit-flex;
   display: -ms-flex;
@@ -457,7 +457,7 @@ a {
   padding: 15px;
   margin: 33px 0 0;
   background: #fafafa; }
-  .form-auth__fieldset {
+  .form-auth__fieldset, .form-reg__fieldset {
     border: 0;
     padding: 0;
     margin: 0;

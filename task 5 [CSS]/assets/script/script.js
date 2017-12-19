@@ -4,8 +4,8 @@ var getReg = document.querySelector('#registration');
 var popupWindowAuth = document.querySelector('.popup-auth');
 var popupWindowReg = document.querySelector('.popup-reg');
 
-var closeAuthBtn = document.querySelectorAll('.form-auth__close')[0];
-var closeRegBtn = document.querySelectorAll('.form-auth__close')[1];
+var closeAuthBtn = document.querySelector('.form-auth__close');
+var closeRegBtn = document.querySelector('.form-reg__close');
 var regBtn = document.querySelector('.form-auth__link-open-reg-popup');
 var authBtn = document.querySelector('.form-auth__link-open-auth-popup');
 var switchBtn = document.querySelector('.switch');
