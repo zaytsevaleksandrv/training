@@ -65,7 +65,7 @@ h6 {
       font-size: 12px; } }
 
 .widget-weather {
-  max-width: 700px;
+  width: 700px;
   padding: 5px 30px;
   background: #f7f7f7;
   border-radius: 5px;
@@ -84,8 +84,7 @@ h6 {
   @media (max-width: 767px) {
     .widget-weather {
       padding: 5px;
-      width: 95%;
-      max-width: unset; } }
+      width: 95%; } }
   .widget-weather__time {
     display: inline-block;
     margin: 0 0 5px; }
