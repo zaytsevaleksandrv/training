@@ -57,6 +57,26 @@ function reverseArrayInPlace(input) {
 var array = ['A', 'B', 'C', 'D'];
 reverseArrayInPlace(array);
 
+
+// Свертка
+function mergeArrays(...input){
+  let obj = {};
+  let arr = new Array;
+  arr = arr.concat(...input);
+
+  for (let i = 0; i < arr.length; i++) {
+    let value = arr[i];
+    obj[value] = true;
+  }
+
+  arr = Object.keys(obj);
+
+  console.log('replaceQuotes - task 5 \n ' + arr)
+}
+
+mergeArrays([1,2],[3,4],[5,6]);
+mergeArrays([1,2],[2,4],[4,6]);
+
 //Кавычки в тексте
 // function replaceQuotes(str) {
 //   var reg = /(?!s'|([\s\S])'[a-z])([\s\S])'|^'/gi
