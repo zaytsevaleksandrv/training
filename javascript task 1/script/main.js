@@ -31,8 +31,6 @@ countChar('My Random String', 'm');
 
 
 // Наоборот
-
-
 function reverseArray(input) {
     let rev = new Array;
     for (let i = input.length - 1; i >= 0; i--) {
@@ -42,6 +40,21 @@ function reverseArray(input) {
 }
 
 reverseArray([1, 2, 3, 4]);
+
+function reverseArrayInPlace(input) {
+    var i = 0;
+    var j = input.length - 1;
+    while (i < j) {
+        var x = input[i];
+        input[i] = input[j];
+        input[j] = x;
+        i++;
+        j--;
+    }
+    console.log ('reverseArrayInPlace - task 4: \n' + input);
+}
+
+reverseArrayInPlace([1, 2, 3, 4]);
 
 // function reverseArray([...array]){
 //   let array = [...array];
