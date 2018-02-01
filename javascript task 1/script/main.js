@@ -42,19 +42,20 @@ function reverseArray(input) {
 reverseArray([1, 2, 3, 4]);
 
 function reverseArrayInPlace(input) {
-    var i = 0;
-    var j = input.length - 1;
+    let i = 0;
+    let j = input.length - 1;
     while (i < j) {
-        var x = input[i];
+        let value = input[i];
         input[i] = input[j];
-        input[j] = x;
+        input[j] = value;
         i++;
         j--;
     }
     console.log ('reverseArrayInPlace - task 4: \n' + input);
 }
 
-reverseArrayInPlace([1, 2, 3, 4]);
+var array = ['A', 'B', 'C', 'D'];
+reverseArrayInPlace(array);
 
 // function reverseArray([...array]){
 //   let array = [...array];
