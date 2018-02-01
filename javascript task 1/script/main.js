@@ -57,25 +57,6 @@ function reverseArrayInPlace(input) {
 var array = ['A', 'B', 'C', 'D'];
 reverseArrayInPlace(array);
 
-// function reverseArray([...array]){
-//   let array = [...array];
-//   for (i = array.length - 1; i >= 0 ; i--) {
-//     console.log ('reverseArray - task 4' + array[i]);
-//   }
-// }
-//
-// reverseArray([1, 2, 3, 4]);
-//
-// function reverseArrayInPlace([...array]) {
-//   let array = [...array];
-//   for (i = array.length - 1; i >= 0 ; i--) {
-//     console.log ('reverseArrayInPlace - task 4' + array[i]);
-//   }
-// }
-//
-// var array = ['A', 'B', 'C', 'D'];
-// reverseArrayInPlace(array);
-
 //Кавычки в тексте
 // function replaceQuotes(str) {
 //   var reg = /(?!s'|([\s\S])'[a-z])([\s\S])'|^'/gi
