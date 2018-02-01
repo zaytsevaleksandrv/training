@@ -88,15 +88,14 @@ function deepCompare(a,b) {
 
 deepCompare({ one: 1, two: '2' }, { one: 1, two:'2' });
 
-
 //Кавычки в тексте
 function replaceQuotes(str) {
-  var reg = /(\')(\w+)(\')/gi
-  var result = str.replace(reg, "\"$2\"");
+  var reg = /(\')((\w+(\.?|\??|\!?)\s*?)*\w+(\.?))(\')/gi;
+  var result = str.replace(reg, "\"$2\"").replace();
   console.log ('replaceQuotes - task 9 \n ' + result);
 }
 
-replaceQuotes("I'm the 'hero' 'hero' 'hero' i'm ('green') ('('green')') ''green'' '1212'");
+replaceQuotes("I'm the 'hero' 'hero' 'hero' i'm ('green green_green sdferf? Ggreen_green.') ('('green')') ''green'' '1212'");
 
 // День и месяц
 function getNames(date) {
