@@ -71,20 +71,32 @@ function mergeArrays(...input){
 
   arr = Object.keys(obj);
 
-  console.log('replaceQuotes - task 5 \n ' + arr)
+  console.log('mergeArrays - task 5 \n ' + arr)
 }
 
 mergeArrays([1,2],[3,4],[5,6]);
 mergeArrays([1,2],[2,4],[4,6]);
 
+//Глубокое сравнение
+
+function deepCompare(a,b) {
+  var a = JSON.stringify(a);
+  var b = JSON.stringify(b);
+  var result = (a === b);
+  console.log('deepCompare - task 8 \n' + result);
+}
+
+deepCompare({ one: 1, two: '2' }, { one: 1, two:'2' });
+
+
 //Кавычки в тексте
-// function replaceQuotes(str) {
-//   var reg = /(?!s'|([\s\S])'[a-z])([\s\S])'|^'/gi
-//   var result = str.replace(reg, "\"$1\"");
-//   console.log ('replaceQuotes - task 9 \n ' + result);
-// }
-//
-// replaceQuotes("I'm the 'hero'");
+function replaceQuotes(str) {
+  var reg = /(\')(\w+)(\')/gi
+  var result = str.replace(reg, "\"$2\"");
+  console.log ('replaceQuotes - task 9 \n ' + result);
+}
+
+replaceQuotes("I'm the 'hero' 'hero' 'hero' i'm ('green') ('('green')') ''green'' '1212'");
 
 // День и месяц
 function getNames(date) {
@@ -184,45 +196,6 @@ differenceInYears(new Date(2014, 0), new Date(2014, 6));
 // }
 //
 // makeArray(1, 10);
-//
-// // Наоборот
-// function reverseArray([a,b,c,d]){
-//   document.write('<b>task 4</b><br>' );
-//   document.write('reverseArray: ');
-//   for (i = [a,b,c,d].length - 1; i >= 0 ; i--) {
-//     document.write([a,b,c,d][i]);
-//     console.log ('reverseArray: ' + [a,b,c,d][i]);
-//   }
-//   document.write('<br>');
-// }
-//
-// reverseArray([1, 2, 3, 4]);
-//
-// function reverseArrayInPlace(array) {
-//   document.write('reverseArrayInPlace: ');
-//   for (i = array.length - 1; i >= 0 ; i--) {
-//     document.write(array[i] + ' ');
-//     console.log ('reverseArrayInPlace: ' + array[i]);
-//   }
-//   document.write('<hr>');
-// }
-//
-// var array = ['A', 'B', 'C', 'D'];
-// reverseArrayInPlace(array);
-//
-// // Свертка
-// // TODO: сравнение массивов
-// function mergeArrays([...arr1], [...arr2], [...arr3]){
-//   document.write('<b>task 5</b><br>' );
-//   var arrSpread = [...arr1, ...arr2, ...arr3];
-//   document.write('mergeArrays spread: ' + arrSpread + '<br>');
-//   console.log ('mergeArrays spread: ' + arrSpread);
-//   var arrConcat = arr1.concat(arr2,arr3);
-//   document.write('mergeArrays concat: ' + arrConcat + '<hr>');
-//   console.log ('mergeArrays concat: ' + arrConcat );
-// }
-// mergeArrays([1,2],[3,4],[5,6]);
-//
 // //Глубокое сравнение
 //
 // function deepCompare(a,b) {
