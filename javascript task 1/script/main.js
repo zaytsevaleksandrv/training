@@ -29,14 +29,47 @@ function countChar(str, token) {
 
 countChar('My Random String', 'm');
 
-//Кавычки в тексте
-function replaceQuotes(str) {
-  var reg = /(?!s'|([\s\S])'[a-z])([\s\S])'|^'/gi
-  var result = str.replace(reg, "\"$1\"");
-  console.log ('replaceQuotes - task 9 \n ' + result);
+
+// Наоборот
+
+
+function reverseArray(input) {
+    let rev = new Array;
+    for (let i = input.length - 1; i >= 0; i--) {
+        rev.push(input[i]);
+    }
+    console.log ('reverseArray - task 4: \n' + rev);
 }
 
-replaceQuotes("I'm the 'hero'");
+reverseArray([1, 2, 3, 4]);
+
+// function reverseArray([...array]){
+//   let array = [...array];
+//   for (i = array.length - 1; i >= 0 ; i--) {
+//     console.log ('reverseArray - task 4' + array[i]);
+//   }
+// }
+//
+// reverseArray([1, 2, 3, 4]);
+//
+// function reverseArrayInPlace([...array]) {
+//   let array = [...array];
+//   for (i = array.length - 1; i >= 0 ; i--) {
+//     console.log ('reverseArrayInPlace - task 4' + array[i]);
+//   }
+// }
+//
+// var array = ['A', 'B', 'C', 'D'];
+// reverseArrayInPlace(array);
+
+//Кавычки в тексте
+// function replaceQuotes(str) {
+//   var reg = /(?!s'|([\s\S])'[a-z])([\s\S])'|^'/gi
+//   var result = str.replace(reg, "\"$1\"");
+//   console.log ('replaceQuotes - task 9 \n ' + result);
+// }
+//
+// replaceQuotes("I'm the 'hero'");
 
 // День и месяц
 function getNames(date) {
