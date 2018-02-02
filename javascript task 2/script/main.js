@@ -22,6 +22,13 @@ console.log('remove: ' + c.remove()); // 3
 console.log('remove: ' + c.remove()); // 2
 console.log('remove: ' + c.remove()); // 1
 
+//управление памятью
+var arr = new Array;
+
+for (var i = 0; i <= 9; i++){
+  arr.push(c.boost());
+}
+console.log('Управление памятью\n' + arr)
 
 //4. Контекст вызова и карринг
 //1 сспособ
