@@ -6,7 +6,7 @@ function makeCounter() {
     boost: function() {
         return currentCount++;
     },
-    reset: function() {
+    remove: function() {
         return currentCount--;
     }
   };
@@ -18,9 +18,9 @@ console.log('3. Замыкание\n');
 console.log('boost: ' + c.boost()); // 0
 console.log('boost: ' + c.boost()); // 1
 console.log('boost: ' + c.boost()); // 2
-console.log('reset: ' + c.reset()); // 3
-console.log('reset: ' + c.reset()); // 2
-console.log('reset: ' + c.reset()); // 1
+console.log('remove: ' + c.remove()); // 3
+console.log('remove: ' + c.remove()); // 2
+console.log('remove: ' + c.remove()); // 1
 
 
 //4. Контекст вызова и карринг
