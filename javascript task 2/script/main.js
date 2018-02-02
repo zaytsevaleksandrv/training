@@ -1,4 +1,27 @@
 //3. Замыкание
+function makeCounter() {
+  var currentCount = 0;
+
+  return {
+    count: function() {
+        return currentCount++;
+    },
+    reset: function() {
+        return currentCount--;
+    }
+  };
+}
+
+var c = makeCounter();
+
+console.log('3. Замыкание\n');
+console.log('count: ' + c.count()); // 0
+console.log('count: ' + c.count()); // 1
+console.log('count: ' + c.count()); // 2
+console.log('reset: ' + c.reset()); // 3
+console.log('reset: ' + c.reset()); // 2
+console.log('reset: ' + c.reset()); // 1
+
 
 //4. Контекст вызова и карринг
 //1 сспособ
