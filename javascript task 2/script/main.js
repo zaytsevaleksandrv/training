@@ -1,3 +1,5 @@
+//3. Замыкание
+
 //4. Контекст вызова и карринг
 //1 сспособ
 function sumWith(number) {
@@ -40,8 +42,7 @@ interval = setInterval(incrementNumber, 2000);
 
 //[Дополнительно]
 function timeStamp(delay) {
-  num++;
-  
+
   if (num == max) {
     clearInterval(timeStamp);
     console.log('timeStamp: ' + delay);
