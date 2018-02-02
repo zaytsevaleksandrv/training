@@ -3,7 +3,7 @@ function makeCounter() {
   var currentCount = 0;
 
   return {
-    count: function() {
+    boost: function() {
         return currentCount++;
     },
     reset: function() {
@@ -15,9 +15,9 @@ function makeCounter() {
 var c = makeCounter();
 
 console.log('3. Замыкание\n');
-console.log('count: ' + c.count()); // 0
-console.log('count: ' + c.count()); // 1
-console.log('count: ' + c.count()); // 2
+console.log('boost: ' + c.boost()); // 0
+console.log('boost: ' + c.boost()); // 1
+console.log('boost: ' + c.boost()); // 2
 console.log('reset: ' + c.reset()); // 3
 console.log('reset: ' + c.reset()); // 2
 console.log('reset: ' + c.reset()); // 1
