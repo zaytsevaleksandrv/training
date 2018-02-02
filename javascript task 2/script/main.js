@@ -10,7 +10,7 @@ var g = sumWith.bind(o);
 console.log('4. Контекст вызова и карринг\n');
 console.log('bind: ' + g(number));
 
-//2 способ
+//2 способ [Дополнительно]
 function sumWithCall(number) {
   return this.currentValue += number;
 }
@@ -38,8 +38,10 @@ function incrementNumber() {
 
 interval = setInterval(incrementNumber, 2000);
 
-
+//[Дополнительно]
 function timeStamp(delay) {
+  num++;
+  
   if (num == max) {
     clearInterval(timeStamp);
     console.log('timeStamp: ' + delay);
