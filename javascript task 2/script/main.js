@@ -22,7 +22,7 @@ console.log('remove: ' + c.remove()); // 3
 console.log('remove: ' + c.remove()); // 2
 console.log('remove: ' + c.remove()); // 1
 
-//управление памятью
+//управление памятью [Дополнительно]
 var arr = new Array;
 
 for (var i = 0; i <= 9; i++){
