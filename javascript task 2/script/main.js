@@ -29,11 +29,13 @@ function incrementNumber() {
 
   if (num == max) {
     clearInterval(interval);
-    console.log('setInterval: stop, выполненно - ' + num + ' раз');
+    console.log('clearInterval: stop, \n setInterval выполненно - ' + num + ' раз');
   }
 }
 
 interval = setInterval(incrementNumber, 2000);
+
+
 // let output = setInterval(function outputText() {
 //   console.log('setInterval: text');
 // }, 2000);
