@@ -29,7 +29,7 @@ function incrementNumber() {
 
   if (num == max) {
     clearInterval(interval);
-    console.log('clearInterval: stop, \n setInterval выполненно - ' + num + ' раз');
+    console.log('clearInterval: stop, \nsetInterval выполненно - ' + num + ' раз');
   }
 }
 
