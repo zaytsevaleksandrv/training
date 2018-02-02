@@ -7,6 +7,7 @@ var number = 2;
 var o = {currentValue: 3};
 var g = sumWith.bind(o);
 
+console.log('4. Контекст вызова и карринг\n');
 console.log('bind: ' + g(number));
 
 //2 способ
@@ -22,6 +23,8 @@ console.log('call: ' + c);
 var num = 0;
 var max = 5;
 var interval = null;
+
+console.log('5. setInterval\n');
 
 function incrementNumber() {
   num++;
