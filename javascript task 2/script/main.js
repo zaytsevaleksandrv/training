@@ -46,8 +46,6 @@ Promise.all(arrRandom)
     result => console.log('2. Цепочка промисов[b]\n ' + result)
   )
 
-
-
 //3. Замыкание
 function makeCounter() {
   var currentCount = 0;
