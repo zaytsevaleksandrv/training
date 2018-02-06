@@ -25,6 +25,29 @@ random(3)
     result => console.log('2. Цепочка промисов[a]\n3 вызов random: ' + result)
   );
 
+//2. Цепочка промисов - b
+function randomTwo() {
+  return new Promise(function(resolve) {
+  var timeout = Math.random()*3000;
+  setTimeout(function(){
+    resolve(Math.random()*3);
+  }, timeout)
+  })
+}
+
+var arrRandom = new Array;
+
+for (var i = 0; i <= 6; i++) {
+  arrRandom.push(randomTwo());
+}
+
+Promise.all(arrRandom)
+  .then(
+    result => console.log('2. Цепочка промисов[b]\n ' + result)
+  )
+
+
+
 //3. Замыкание
 function makeCounter() {
   var currentCount = 0;
