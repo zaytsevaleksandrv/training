@@ -1,3 +1,30 @@
+//2. Цепочка промисов - a
+function random(sumWith) {
+  return new Promise(function(resolve) {
+  var timeout = Math.random()*3000;
+  setTimeout(function(){
+    resolve(Math.random()*3+ sumWith);
+  }, timeout)
+  })
+}
+
+random(3)
+  .then(
+    result => {
+      console.log('2. Цепочка промисов[a]\n1 вызов random: ' + result);
+      return random(result);
+    }
+  )
+  .then(
+    result => {
+      console.log('2. Цепочка промисов[a]\n2 вызов random: ' + result);
+      return random(result);
+    }
+  )
+  .then(
+    result => console.log('2. Цепочка промисов[a]\n3 вызов random: ' + result)
+  );
+
 //3. Замыкание
 function makeCounter() {
   var currentCount = 0;
