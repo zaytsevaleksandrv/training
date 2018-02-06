@@ -26,7 +26,7 @@ function compare(a, b){
 compare(1,'2')
   .then(
     result => result,
-    error => console.log('Ошибка: ' + error.message)
+    error => console.log('1. Промисификация\nОшибка: ' + error.message)
   )
 
 //2. Цепочка промисов - a
