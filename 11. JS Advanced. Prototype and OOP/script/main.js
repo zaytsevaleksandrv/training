@@ -56,6 +56,7 @@ console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
 console.log('%cmort','color:red;font-weight: bold', 'move = ' + mort.move());
 console.log('%cmort','color:red;font-weight: bold', 'stop = ' + mort.stop());
 
+//----------------------------------------------------------------------------------//
 //родительский конструктор Bike_duplicate
 function Bike_duplicate(wheelsCount) {
   Vehical_dublicate.apply(this, arguments);
@@ -84,6 +85,7 @@ console.log('%clu','color:green;font-weight: bold','speed = ' + lu.speed);
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
 
+//----------------------------------------------------------------------------------//
 //родительский конструктор Car_duplicate
 function Car_duplicate(wheelsCount, doorsCount, openCloseDoors) {
   this.wheelsCount = wheelsCount || 4;
@@ -95,6 +97,7 @@ function Car_duplicate(wheelsCount, doorsCount, openCloseDoors) {
 Car_duplicate.prototype = Object.create(Vehical_dublicate.prototype);
 Car_duplicate.prototype.constructor = Car_duplicate;
 Car.count = 0;
+
 //открывает дверь
 Car_duplicate.prototype.openDoor = function() {
   this.openCloseDoors++ ;
@@ -140,7 +143,7 @@ function Child(wheelsCount, doorsCount, openCloseDoors) {
   Car_duplicate.apply(this, arguments);
 }
 Child.prototype = new Car_duplicate();
-var marty = new Child(4,5,-2);
+var marty = new Child();
 
 console.log('%c\nCar\n\n', 'text-decoration: underline')
 console.log('object car count = ' + marty.count())
@@ -150,3 +153,24 @@ console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
+
+//----------------------------------------------------------------------------------//
+//родительский конструктор MonsterTruck_duplicate
+function MonsterTruck_duplicate(wheelsSize) {
+  Car_duplicate.apply(this, arguments);
+  this.wheelsSize = wheelsSize || 30;
+}
+
+MonsterTruck_duplicate.prototype = Object.create(Car_duplicate.prototype);
+MonsterTruck_duplicate.prototype.constructor = MonsterTruck_duplicate;
+
+//открывает дверь
+MonsterTruck_duplicate.prototype.openDoor = function(){
+  setTimeout(Car_duplicate.prototype.openDoor.bind(this), 1000);
+}
+
+var martyTruck = new Child();
+
+console.log('%c\nMonsterTruck\n\n', 'text-decoration: underline')
+
+console.log('%cmartyTruck','color:#f8ab47;font-weight: bold', 'open doors: ' + martyTruck.openDoor() + ' of ' + martyTruck.doorsCount);
