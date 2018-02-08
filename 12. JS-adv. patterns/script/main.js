@@ -82,25 +82,3 @@
 // girl1.eat(3);
 
 //2 observer
-
-function Wallet() {
-  this.amount = Math.random() * 1000;
-}
-Wallet.prototype.send = function () {
-    const minus = Math.random() * 100;
-    this.amount = this.amount - minus;
-    console.log(this.amount);
-    if(this.amount > 0) {
-      setTimeout(this.send.bind(this), Math.random() * 500);
-    } else {
-      console.log('WALLET is empty');
-    }
-};
-Wallet.prototype.eventFromWallet = function(plus) {
-  this.amount = this.amount + plus;
-}
-let wallet1 = new Wallet();
-let wallet2 = new Wallet();
-// need add here subscribe logic
-wallet1.send();
-wallet2.send();
