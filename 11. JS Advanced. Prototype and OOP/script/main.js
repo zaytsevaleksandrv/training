@@ -62,12 +62,17 @@ function Bike_duplicate(wheelsCount) {
   this.wheelsCount = wheelsCount || 2;
 }
 
+Bike_duplicate.prototype = Object.create(Vehical_dublicate.prototype);
+Bike_duplicate.prototype.constructor = Bike_duplicate;
+
 //увеличивает скорость на 1
 Bike_duplicate.prototype.move = function() {
   this.speed++;
   return this.speed + ' врум врум';
 }
 
+
+//дочерний конструктор
 function Child(speed) {
   Bike_duplicate.apply(this, arguments);
 }
@@ -78,3 +83,63 @@ console.log('%c\nBike\n\n', 'text-decoration: underline')
 console.log('%clu','color:green;font-weight: bold','speed = ' + lu.speed);
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
+
+//родительский конструктор Car_duplicate
+function Car_duplicate(wheelsCount, doorsCount, openCloseDoors) {
+  this.wheelsCount = wheelsCount || 4;
+  this.doorsCount = doorsCount || 5;
+  this.openCloseDoors = openCloseDoors || 0;
+}
+
+Car_duplicate.prototype = Object.create(Vehical_dublicate.prototype);
+Car_duplicate.prototype.constructor = Car_duplicate;
+
+//открывает дверь
+Car_duplicate.prototype.openDoor = function() {
+  this.openCloseDoors++ ;
+
+  if (this.openCloseDoors > 0 && this.openCloseDoors < this.doorsCount){
+    return this.openCloseDoors;
+  } else if (this.openCloseDoors <= 0){
+    let close = 'all doors close';
+    return close;
+  } else if (this.openCloseDoors >= this.doorsCount){
+    let open = 'all doors open';
+    return open;
+  } else {
+    return this.openCloseDoors;
+  }
+}
+
+//закрывает дверь
+Car_duplicate.prototype.closeDoor = function() {
+  let close = this.doorsCount - this.openCloseDoors
+  close++;
+
+  if (this.openCloseDoors > 0 && this.openCloseDoors < this.doorsCount){
+    return close;
+  } else if (this.openCloseDoors <= 0){
+    let close = 'all doors close';
+    return close;
+  } else if (this.openCloseDoors >= this.doorsCount){
+    let close = 1;
+    return close;
+  } else {
+    return close;
+  }
+}
+
+//дочерний конструктор
+function Child(wheelsCount, doorsCount, openCloseDoors) {
+  Car_duplicate.apply(this, arguments);
+}
+Child.prototype = new Car_duplicate();
+var marty = new Child(4,5,-2);
+
+console.log('%c\nCar\n\n', 'text-decoration: underline')
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
+console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
