@@ -48,8 +48,8 @@ function Child(speed) {
   Vehical_dublicate.apply(this, arguments);
 }
 Child.prototype = new Vehical_dublicate();
-
 var mort = new Child(20);
+
 console.log('%c\n2. Используя прототипное наследование создать иерархию классов для объектов из задания 1 с дополнениями\n\n', 'font-weight: bold')
 console.log('%cVehical\n\n', 'text-decoration: underline')
 console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
@@ -159,6 +159,7 @@ console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty
 function MonsterTruck_duplicate(wheelsSize) {
   Car_duplicate.apply(this, arguments);
   this.wheelsSize = wheelsSize || 30;
+  console.log(arguments)
 }
 
 MonsterTruck_duplicate.prototype = Object.create(Car_duplicate.prototype);
@@ -166,10 +167,10 @@ MonsterTruck_duplicate.prototype.constructor = MonsterTruck_duplicate;
 
 //открывает дверь
 MonsterTruck_duplicate.prototype.openDoor = function(){
-  setTimeout(Car_duplicate.prototype.openDoor(), 1000);
+  setTimeout(Car_duplicate.prototype.openDoor.bind(this), 1000);
 }
 
-var martyTruck = new Child(1,12,3);
+var martyTruck = new MonsterTruck_duplicate(1,12,3);
 
 console.log('%c\nMonsterTruck\n\n', 'text-decoration: underline')
 
