@@ -12,8 +12,9 @@ Translation.prototype.remitter = function(onRemitter){
 
 //Опишем метод, который будет вызываться, когда прошел перевод
 Translation.prototype.translated = function(success){
-  for(var index in this.remitters) {
-    this.remitters[index].send(success);
+
+  for(var i in this.remitters) {
+    this.remitters[i].send(success);
   }
 }
 
