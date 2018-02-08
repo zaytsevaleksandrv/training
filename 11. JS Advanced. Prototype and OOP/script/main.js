@@ -27,7 +27,7 @@ console.log('MonsterTruck\nspeed = ' + MonsterTruck.speed + '\nwheelsCount = ' +
 
 //2. Используя прототипное наследование создать иерархию классов для объектов из задания 1 с дополнениями):
 
-//родительский конструктор Vehical
+//родительский конструктор Vehical_dublicate
 function Vehical_dublicate(speed) {
   this.speed = speed || 10;
 }
@@ -55,3 +55,26 @@ console.log('%cVehical\n\n', 'text-decoration: underline')
 console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
 console.log('%cmort','color:red;font-weight: bold', 'move = ' + mort.move());
 console.log('%cmort','color:red;font-weight: bold', 'stop = ' + mort.stop());
+
+//родительский конструктор Bike_duplicate
+function Bike_duplicate(wheelsCount) {
+  Vehical_dublicate.apply(this, arguments);
+  this.wheelsCount = wheelsCount || 2;
+}
+
+//увеличивает скорость на 1
+Bike_duplicate.prototype.move = function() {
+  this.speed++;
+  return this.speed + ' врум врум';
+}
+
+function Child(speed) {
+  Bike_duplicate.apply(this, arguments);
+}
+Child.prototype = new Bike_duplicate();
+var lu = new Child(13);
+
+console.log('%c\nBike\n\n', 'text-decoration: underline')
+console.log('%clu','color:green;font-weight: bold','speed = ' + lu.speed);
+console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
+console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
