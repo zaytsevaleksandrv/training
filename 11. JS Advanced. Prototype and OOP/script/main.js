@@ -166,10 +166,10 @@ MonsterTruck_duplicate.prototype.constructor = MonsterTruck_duplicate;
 
 //открывает дверь
 MonsterTruck_duplicate.prototype.openDoor = function(){
-  setTimeout(Car_duplicate.prototype.openDoor.bind(this), 1000);
+  setTimeout(Car_duplicate.prototype.openDoor(), 1000);
 }
 
-var martyTruck = new Child();
+var martyTruck = new Child(1,12,3);
 
 console.log('%c\nMonsterTruck\n\n', 'text-decoration: underline')
 
