@@ -89,11 +89,12 @@ function Car_duplicate(wheelsCount, doorsCount, openCloseDoors) {
   this.wheelsCount = wheelsCount || 4;
   this.doorsCount = doorsCount || 5;
   this.openCloseDoors = openCloseDoors || 0;
+  Car.count++;
 }
 
 Car_duplicate.prototype = Object.create(Vehical_dublicate.prototype);
 Car_duplicate.prototype.constructor = Car_duplicate;
-
+Car.count = 0;
 //открывает дверь
 Car_duplicate.prototype.openDoor = function() {
   this.openCloseDoors++ ;
@@ -129,6 +130,11 @@ Car_duplicate.prototype.closeDoor = function() {
   }
 }
 
+//counter
+Car_duplicate.prototype.count = function() {
+  return Car.count;
+}
+
 //дочерний конструктор
 function Child(wheelsCount, doorsCount, openCloseDoors) {
   Car_duplicate.apply(this, arguments);
@@ -137,6 +143,7 @@ Child.prototype = new Car_duplicate();
 var marty = new Child(4,5,-2);
 
 console.log('%c\nCar\n\n', 'text-decoration: underline')
+console.log('object car count = ' + marty.count())
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
