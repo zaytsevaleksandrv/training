@@ -43,6 +43,16 @@ Vehical_dublicate.prototype.stop = function() {
   return this.speed = 0;
 }
 
+Vehical_dublicate.prototype.toString = function() {
+  var msg = "Помни, вся мощь джедая идет от его Силы...";
+  return msg;
+}
+
+Vehical_dublicate.prototype.valueOf = function() {
+  var msg = "Эх... не видна взгляду Темная сторона";
+  return msg;
+};
+
 //дочерний конструктор
 function Child(speed) {
   Vehical_dublicate.apply(this, arguments);
@@ -55,6 +65,9 @@ console.log('%cVehical\n\n', 'text-decoration: underline')
 console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
 console.log('%cmort','color:red;font-weight: bold', 'move = ' + mort.move());
 console.log('%cmort','color:red;font-weight: bold', 'stop = ' + mort.stop());
+
+console.log('%c\n' + mort.toString(), 'color: orange')
+console.log('%c\n' + mort.valueOf(), 'color: green')
 
 //----------------------------------------------------------------------------------//
 //родительский конструктор Bike_duplicate
@@ -72,6 +85,15 @@ Bike_duplicate.prototype.move = function() {
   return this.speed + ' врум врум';
 }
 
+Bike_duplicate.prototype.toString = function() {
+  var msg = "Они что-то знают про Силу и скрывают это от меня...";
+  return msg;
+}
+
+Bike_duplicate.prototype.valueOf = function() {
+  var msg = "Здесь неприятно...Я чувствую холод,.. смерть...";
+  return msg;
+};
 
 //дочерний конструктор
 function Child(speed) {
@@ -84,6 +106,9 @@ console.log('%c\nBike\n\n', 'text-decoration: underline')
 console.log('%clu','color:green;font-weight: bold','speed = ' + lu.speed);
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
+
+console.log('%c\n' + lu.toString(), 'color: orange')
+console.log('%c\n' + lu.valueOf(), 'color: green')
 
 //----------------------------------------------------------------------------------//
 //родительский конструктор Car_duplicate
@@ -138,6 +163,16 @@ Car_duplicate.prototype.count = function() {
   return Car.count;
 }
 
+Car_duplicate.prototype.toString = function() {
+  var msg = "Тут царит темная сторона Силы...Это Зла обитель. Войти ты должен.";
+  return msg;
+}
+
+Car_duplicate.prototype.valueOf = function() {
+  var msg = "Бояться будешь. Ты будешь...";
+  return msg;
+};
+
 //дочерний конструктор
 function Child(wheelsCount, doorsCount, openCloseDoors) {
   Car_duplicate.apply(this, arguments);
@@ -153,6 +188,9 @@ console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
+
+console.log('%c\n' + marty.toString(), 'color: orange')
+console.log('%c\n' + marty.valueOf(), 'color: green')
 
 //----------------------------------------------------------------------------------//
 //родительский конструктор MonsterTruck_duplicate
@@ -171,12 +209,24 @@ MonsterTruck_duplicate.prototype.openDoor = function(){
   return this.openCloseDoors;
 }
 
+MonsterTruck_duplicate.prototype.toString = function() {
+  var msg = "Сомневаюсь. Мне нужен великий воин.";
+  return msg;
+}
+
+MonsterTruck_duplicate.prototype.valueOf = function() {
+  var msg = "―Оружие убери! Плохого не сделаю. Знать хочу - зачем ты здесь?";
+  return msg;
+};
+
 var martyTruck = new MonsterTruck_duplicate(1,12,3);
 
 console.log('%c\nMonsterTruck\n\n', 'text-decoration: underline')
 
 console.log('%cmartyTruck','color:#f8ab47;font-weight: bold', 'open doors: ' + martyTruck.openDoor() + ' of ' + martyTruck.doorsCount);
 
+console.log('%c\n' + martyTruck.toString(), 'color: orange')
+console.log('%c\n' + martyTruck.valueOf(), 'color: green')
 
 //-----------------------------------------------------------------функциональном стиле--------------------------------------------------------//
 
@@ -192,6 +242,16 @@ function Vehical_three(speed) {
   this.stop = function() {
     return this.speed = 0;
   }
+
+  this.toString = function() {
+    var msg = "Но что там?";
+    return msg;
+  }
+
+  this.valueOf = function() {
+    var msg = "Только то, что с собой. Оружие тебе не нужно.";
+    return msg;
+  }
 }
 
 var mort = new Vehical_three(20);
@@ -201,6 +261,9 @@ console.log('%cVehical\n\n', 'text-decoration: underline');
 console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
 console.log('%cmort','color:red;font-weight: bold', 'move = ' + mort.move());
 console.log('%cmort','color:red;font-weight: bold', 'stop = ' + mort.stop());
+
+console.log('%c\n' + mort.toString(), 'color: orange')
+console.log('%c\n' + mort.valueOf(), 'color: green')
 
 //----------------------------bike-----------------------------------//
 
@@ -212,6 +275,16 @@ function Bike_three(wheelsCount) {
     this.speed++;
     return this.speed + ' врум врум';
   }
+
+  this.toString = function() {
+    var msg = "Я не могу поверить!";
+    return msg;
+  }
+
+  this.valueOf = function() {
+    var msg = "Вот и неудачи.";
+    return msg;
+  }
 }
 
 var lu = new Bike_three(13);
@@ -220,6 +293,10 @@ console.log('%c\nBike\n\n', 'text-decoration: underline')
 console.log('%clu','color:green;font-weight: bold','speed = ' + lu.speed);
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
 console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
+console.log('%clu','color:green;font-weight: bold', 'move = ' + lu.move());
+
+console.log('%c\n' + lu.toString(), 'color: orange')
+console.log('%c\n' + lu.valueOf(), 'color: green')
 
 //--------------Car--------------//
 
@@ -265,6 +342,16 @@ function Car_three(wheelsCount, doorsCount, openCloseDoors) {
   this.count = function() {
     return Car_three.count;
   }
+
+  this.toString = function() {
+    var msg = "Сосредоточься. Почувствуй Силы течение.";
+    return msg;
+  }
+
+  this.valueOf = function() {
+    var msg = "Сквозь Силу увидишь ты планеты. Будущее. Прошлое.Друзей, что нет.";
+    return msg;
+  }
 }
 
 Car_three.count = 0;
@@ -280,6 +367,9 @@ console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'open doors: ' + marty.openDoor() + ' of ' + marty.doorsCount);
 console.log('%cmarty','color:#9ab1c7;font-weight: bold', 'close doors: ' + marty.closeDoor() + ' of ' + marty.doorsCount);
 
+console.log('%c\n' + marty.toString(), 'color: orange')
+console.log('%c\n' + marty.valueOf(), 'color: green')
+
 //------------MonsterTruck--------//
 
 function MonsterTruck_three(wheelsSize) {
@@ -291,6 +381,16 @@ function MonsterTruck_three(wheelsSize) {
     setTimeout(this.openDoor.bind(this), 1000);
     return this.openCloseDoors;
   }
+
+  this.toString = function() {
+    var msg = "Говорил я. Безрассуден он. Все усложнилось.";
+    return msg;
+  }
+
+  this.valueOf = function() {
+    var msg = "Он - наша единственная надежда. Нет. Еще одна есть.";
+    return msg;
+  }
 }
 
 var martyTruck = new MonsterTruck_three(1,12,3);
@@ -298,3 +398,6 @@ var martyTruck = new MonsterTruck_three(1,12,3);
 console.log('%c\nMonsterTruck\n\n', 'text-decoration: underline')
 
 console.log('%cmartyTruck','color:#f8ab47;font-weight: bold', 'open doors: ' + martyTruck.openDoor() + ' of ' + martyTruck.doorsCount);
+
+console.log('%c\n' + martyTruck.toString(), 'color: orange')
+console.log('%c\n' + martyTruck.valueOf(), 'color: green')
