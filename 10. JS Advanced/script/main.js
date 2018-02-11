@@ -82,10 +82,10 @@ function makeCounter() {
   var currentCount = 0;
 
   return {
-    boost: function() {
+    next: function() {
         return currentCount++;
     },
-    remove: function() {
+    prev: function() {
         return currentCount--;
     }
   };
@@ -94,12 +94,12 @@ function makeCounter() {
 var c = makeCounter();
 
 console.log('3. Замыкание\n');
-console.log('boost: ' + c.boost()); // 0
-console.log('boost: ' + c.boost()); // 1
-console.log('boost: ' + c.boost()); // 2
-console.log('remove: ' + c.remove()); // 3
-console.log('remove: ' + c.remove()); // 2
-console.log('remove: ' + c.remove()); // 1
+console.log('next: ' + c.next()); // 0
+console.log('next: ' + c.next()); // 1
+console.log('next: ' + c.next()); // 2
+console.log('prev: ' + c.prev()); // 3
+console.log('prev: ' + c.prev()); // 2
+console.log('prev: ' + c.prev()); // 1
 
 //управление памятью [Дополнительно]
 var arr = new Array;
