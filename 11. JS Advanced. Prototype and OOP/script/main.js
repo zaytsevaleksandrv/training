@@ -256,7 +256,7 @@ function Vehical_three(speed) {
 
 var mort = new Vehical_three(20);
 
-console.log('%c\n2. Функциональное \n\n', 'font-weight: bold')
+console.log('%c\n3. Используя функциональное наследование повторить задачу из п2. \n\n', 'font-weight: bold')
 console.log('%cVehical\n\n', 'text-decoration: underline');
 console.log('%cmort','color:red;font-weight: bold','speed = ' + mort.speed);
 console.log('%cmort','color:red;font-weight: bold', 'move = ' + mort.move());
