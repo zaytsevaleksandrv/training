@@ -102,12 +102,12 @@ console.log('prev: ' + c.prev()); // 2
 console.log('prev: ' + c.prev()); // 1
 
 //управление памятью [Дополнительно]
-var arr = new Array;
-
-for (var i = 0; i <= 9; i++){
-  arr.push(c.boost());
-}
-console.log('Управление памятью\n' + arr)
+// var arr = new Array;
+//
+// for (var i = 0; i <= 9; i++){
+//   arr.push(c.next());
+// }
+// console.log('Управление памятью\n' + arr)
 
 //4. Контекст вызова и карринг
 //1 сспособ
