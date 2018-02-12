@@ -175,7 +175,7 @@ MonsterTruck.prototype.constructor = MonsterTruck;
 
 //открывает дверь
 MonsterTruck.prototype.openDoor = function(){
-  setTimeout(Car.prototype.openDoor.bind(this), 1000);
+  setTimeout(Car.prototype.openDoor.call(this), 1000);
   return this.openCloseDoors;
 }
 

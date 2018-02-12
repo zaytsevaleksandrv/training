@@ -164,8 +164,7 @@ function MonsterTruck(wheelsSize) {
 
   let parentOpenDoor = this.openDoor;
   this.openDoor = function(){
-    this.openCloseDoors++;
-    setTimeout(parentOpenDoor.bind(this), 1000);
+    setTimeout(parentOpenDoor.call(this), 1000);
     return this.openCloseDoors;
   }
 
