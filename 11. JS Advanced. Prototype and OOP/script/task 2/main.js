@@ -54,8 +54,8 @@ Bike.prototype.constructor = Bike;
 
 //увеличивает скорость на 1
 Bike.prototype.move = function() {
-  Vehical.prototype.move.bind(this);
-  return (this.speed +=1)  + ' врум врум';
+  Vehical.prototype.move.call(this);
+  return this.speed + ' врум врум';
 }
 
 Bike.prototype.toString = function() {

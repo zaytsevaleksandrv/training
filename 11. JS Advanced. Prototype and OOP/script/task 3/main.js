@@ -43,9 +43,10 @@ function Bike(wheelsCount) {
   Vehical.apply(this, arguments);
   this.wheelsCount = wheelsCount || 2;
 
+  var parentMove = this.move;
   this.move = function() {
-    this.move.bind(this);
-    return (this.speed +=1) + ' врум врум';
+    parentMove.call(this);
+    return this.speed + ' врум врум';
   }
 
   this.toString = function() {
