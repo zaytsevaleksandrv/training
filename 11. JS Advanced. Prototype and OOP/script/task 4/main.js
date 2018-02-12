@@ -19,7 +19,7 @@ Rabbit.prototype.printName = function() {
   console.log(this.name);
 }
 
-Rabbit.prototype = Object.create(Rabbit.prototype);
+Rabbit.prototype = Object.create(Animal.prototype);
 Rabbit.prototype.constructor = Rabbit;
 
 var r = new Rabbit('Lucky');
