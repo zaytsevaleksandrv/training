@@ -19,7 +19,6 @@ Car.prototype.getTyreSize = function () {
 
 function CarBuilder() {
     this.child = new Car();
-    this.child2 = new Car();
     this.reset();
 }
 CarBuilder.prototype.reset = function() {
