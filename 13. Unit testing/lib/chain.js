@@ -11,7 +11,6 @@ Child.prototype.eat = function(apples) {
     this.next.eat(apples);
     console.log(apples);
   }
-  // need add to here chain logic
 };
 
 module.exports = Child;
