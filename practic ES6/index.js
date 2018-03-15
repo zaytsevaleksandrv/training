@@ -16,7 +16,7 @@ async function setPicture(){
         random.appendChild(getTemplate(i));
         count++;
 
-        if (count == 10) {
+        if (count == 30) {
             break;
         }
     }
