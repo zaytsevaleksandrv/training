@@ -15,6 +15,7 @@
     width: 500px;
     margin: auto;
     overflow: hidden;
+    background: #eee;
 }
 
 .slider__container {
