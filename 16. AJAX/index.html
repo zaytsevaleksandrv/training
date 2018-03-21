@@ -63,55 +63,52 @@
     </nav>
 
     <article class="widget-weather">
-      <h1 id="widget-weather__header">Izhevsk, Udmurt Republic</h1>
-
-      <section class="widget-weather__wrapper-time-and-type-weather">
-        <time id="widget-weather__time" class="widget-weather__time" datetime="2018-01-14">Sunday, January 14</time>
-        <p id="widget-weather__type-weather" class="widget-weather__type-weather">Cloudy</p>
-      </section>
-
-      <section class="widget-weather__wrapper-data">
-        <figure class="widget-weather__illustration-type-weather">
-          <img
-            id="widget-weather__illustration"
-            class="widget-weather__illustration"
-            src="./assets/media/img/snowflake.png"
-            alt="snowflake"
-          >
-          <figcaption class="widget-weather__temperature">
-            <h2>
-              <span id="widget-weather__temperature">-11</span>
-              <sup class="widget-weather__unit">°C</sup>
-            </h2>
-          </figcaption>
-        </figure>
-        <ul class="widget-weather__list-parameters">
-          <li class="widget-weather__inner">
-            <p class="widget-weather__name-parameter">
-              Pressure:
-              <span class="widget-weather__value-parameter">
-                <span id="widget-weather__pressure">0</span>%
-              </span>
-            </p>
-          </li>
-          <li class="widget-weather__inner">
-            <p class="widget-weather__name-parameter">
-              Humidity:
-              <span class="widget-weather__value-parameter">
-                <span id="widget-weather__humidity">80</span>%
-              </span>
-            </p>
-          </li>
-          <li class="widget-weather__inner">
-            <p class="widget-weather__name-parameter">
-              Wind:
-              <span class="widget-weather__value-parameter">
-                <span id="widget-weather__speed">0</span> m/s
-              </span>
-            </p>
-          </li>
-        </ul>
-      </section>
+      <div id="widget_header">
+        <h1 id="widget-weather__header">Izhevsk, Udmurt Republic</h1>
+        
+        <section class="widget-weather__wrapper-time-and-type-weather">
+          <time id="widget-weather__time" class="widget-weather__time" datetime="2018-01-14">Sunday, January 14</time>
+          <p id="widget-weather__type-weather" class="widget-weather__type-weather">Cloudy</p>
+        </section>
+        
+        <section class="widget-weather__wrapper-data">
+          <figure class="widget-weather__illustration-type-weather">
+            <img id="widget-weather__illustration" class="widget-weather__illustration" src="./assets/media/img/snowflake.png" alt="snowflake">
+            <figcaption class="widget-weather__temperature">
+              <h2>
+                <span id="widget-weather__temperature">-11</span>
+                <sup class="widget-weather__unit">°C</sup>
+              </h2>
+            </figcaption>
+          </figure>
+          <ul class="widget-weather__list-parameters">
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Pressure:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__pressure">0</span>%
+                </span>
+              </p>
+            </li>
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Humidity:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__humidity">80</span>%
+                </span>
+              </p>
+            </li>
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Wind:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__speed">0</span> m/s
+                </span>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
 
       <section class="widget-weather__wrapper-forecast-for-week" id="week">
         <article class="widget-weather__forecast widget-weather__forecast_active">

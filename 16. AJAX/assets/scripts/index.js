@@ -11,46 +11,12 @@ function getData( id ) {
         //получаем заголовок
         getHeader( data );
         
-        //получаем дату
-        getNames( data );
-        
-        //получить тип погоды
-        getTypeWeather( data );
-
-        //получить иконку погоды
-        getIcon( data );
-
-        //получить t
-        getTemperature( data );
-
-        //получить влажность
-        getHumidity( data );
-
-        //скорость ветра
-        getSpeed( data );
-
-        //давление
-        getPressure( data );
     });
 }
 
-function getHeader( data ) {
-    let name = data.city.name,
-        country = data.city.country,
-        header = "";
-    header += name + ",&nbsp;" + country;
-    //отправляем в html
-    document
-        .getElementById("widget-weather__header")
-        .innerHTML = header;
-}
-
-// День и месяц
-function getNames( data ) {
-    let date = data.list[0].dt_txt,
-      day = "",
-      month = "",
-      time = "";
+// День
+function getNamesDay( date ) {
+    let day = "";
     date = new Date(date);
 
     switch (date.getDay()) {
@@ -77,164 +43,122 @@ function getNames( data ) {
         break;
     }
 
-    switch (date.getMonth()) {
-        case 0 :
-        month = "January";
-        break;
-        case 1 :
-        month = "February";
-        break;
-        case 2 :
-        month = "March";
-        break;
-        case 3 :
-        month = "April";
-        break;
-        case 4 :
-        month = "May";
-        break;
-        case 5 :
-        month = "June";
-        break;
-        case 6 :
-        month = "July";
-        break;
-        case 7 :
-        month = "August";
-        break;
-        case 8 :
-        month = "September";
-        break;
-        case 9 :
-        month = "October";
-        break;
-        case 10 :
-        month = "November";
-        break;
-        case 11 :
-        month = "December";
-        break;
-    }
-    time += day + ", " + month + "&nbsp;" + date.getDate();
-
-    document
-        .getElementById("widget-weather__time")
-        .innerHTML = time;
+    return day;
 }
 
-//день
-function getNamesDay(week_day) {
-  let day = "";
-  date = new Date(week_day);
+//Месяц
+function getNamesMonth( date ) {
+    let month = "";
+    date = new Date(date);
 
-  switch (date.getDay()) {
-    case 0:
-      day = "Sunday";
-      break;
-    case 1:
-      day = "Monday";
-      break;
-    case 2:
-      day = "Tuesday";
-      break;
-    case 3:
-      day = "Wednesday";
-      break;
-    case 4:
-      day = "Thursday";
-      break;
-    case 5:
-      day = "Friday";
-      break;
-    case 6:
-      day = "Saturday";
-      break;
-  }
+     switch (date.getMonth()) {
+       case 0:
+         month = "January";
+         break;
+       case 1:
+         month = "February";
+         break;
+       case 2:
+         month = "March";
+         break;
+       case 3:
+         month = "April";
+         break;
+       case 4:
+         month = "May";
+         break;
+       case 5:
+         month = "June";
+         break;
+       case 6:
+         month = "July";
+         break;
+       case 7:
+         month = "August";
+         break;
+       case 8:
+         month = "September";
+         break;
+       case 9:
+         month = "October";
+         break;
+       case 10:
+         month = "November";
+         break;
+       case 11:
+         month = "December";
+         break;
+     }
 
-  return day;
+     return month;
 }
 
-//тип погоды
-function getTypeWeather( data ) {
-    let type = data.list[0].weather[0].description,
-        type_weather = "";
-    type_weather += type;
-    document
-        .getElementById("widget-weather__type-weather")
-        .innerHTML = type_weather;
+//число
+function getNamesDayNumber( date ) {
+    let day = "";
+    date = new Date(date).getDate();
+
+    return date;
 }
 
-//иллюстрация
-function getIcon( data ) {
-    let icon = data.list[0].weather[0].icon,
-        path = "";
-
-    switch (icon) {
-      case "13n":
-        path = "./assets/media/img/13n.png";
-        break;
-      case "01d":
-        path = "./assets/media/img/01d.png";
-        break;
-      case "02n":
-        path = "./assets/media/img/02n.png";
-        break;
-      case "04n":
-        path = "./assets/media/img/04n.png";
-        break;
-      case "10d":
-        path = "./assets/media/img/10d.png";
-        break;
-      case "10n":
-        path = "./assets/media/img/10n.png";
-        break;
-      default:
-        path = "./assets/media/img/01n.png";
-        break;
-    }
-    document
-      .getElementById("widget-weather__illustration")
-      .setAttribute("src", path);
-}
-
-//температура
-function getTemperature( data ) {
-    let temperature = data.list[0].main.temp,
-        t = "";
-    t += temperature.toFixed();
-    document
-        .getElementById("widget-weather__temperature")
-        .innerHTML = t;
-}
-
-//влажность
-function getHumidity( data ) {
-    let humidity = data.list[0].main.humidity,
+//шапка виджета
+function getHeader( data ) {
+    let name = data.city.name,
+        country = data.city.country,
+        type = data.list[0].weather[0].description,
+        icon = data.list[0].weather[0].icon,
+        temperature = data.list[0].main.temp,
+        humidity = data.list[0].main.humidity,
+        speed = data.list[0].wind.speed,
+        pressure = data.list[0].main.pressure,
+        date = data.list[0].dt_txt,
+        widget_header = document.getElementById("widget_header"),
         h = "";
-    h += humidity;
-    document
-        .getElementById("widget-weather__humidity")
-        .innerHTML = h;
-}
 
-//температура
-function getSpeed( data ) {
-    let speed = data.list[0].wind.speed,
-        s = "";
-    s += speed;
-    document
-        .getElementById("widget-weather__speed")
-        .innerHTML = s;
-}
+    h += `<h1>${name},&nbsp;${country}</h1>   
+    <section class="widget-weather__wrapper-time-and-type-weather">
+        <time class="widget-weather__time" datetime="2018-01-14">${getNamesDay(date)}, ${getNamesMonth(date)} ${getNamesDayNumber(date)}</time>
+        <p class="widget-weather__type-weather">${type}</p>
+    </section>
+    <section class="widget-weather__wrapper-data">
+        <figure class="widget-weather__illustration-type-weather">
+        <img class="widget-weather__illustration" src="./assets/media/img/${icon}.png" alt="snowflake">
+        <figcaption class="widget-weather__temperature">
+            <h2>
+            ${temperature.toFixed()}
+            <sup class="widget-weather__unit">°C</sup>
+            </h2>
+        </figcaption>
+        </figure>
+        <ul class="widget-weather__list-parameters">
+        <li class="widget-weather__inner">
+            <p class="widget-weather__name-parameter">
+            Pressure:
+            <span class="widget-weather__value-parameter">
+              ${pressure} %
+            </span>
+            </p>
+        </li>
+        <li class="widget-weather__inner">
+            <p class="widget-weather__name-parameter">
+            Humidity:
+            <span class="widget-weather__value-parameter">
+               ${humidity} %
+            </span>
+            </p>
+        </li>
+        <li class="widget-weather__inner">
+            <p class="widget-weather__name-parameter">
+            Wind:
+            <span class="widget-weather__value-parameter">
+               ${speed} m/s
+            </span>
+            </p>
+        </li>
+        </ul>
+    </section>`;
 
-//давление
-function getPressure( data ) {
-    let pressure = data.list[0].main.pressure,
-        p = "";
-    p += pressure;
-    document
-        .getElementById("widget-weather__pressure")
-        .innerHTML = p;
+    widget_header.innerHTML = h;
 }
 
 //прогноз на неделю
@@ -245,7 +169,7 @@ function getWeek( data ) {
         w = "";
 
     for (var i = 4; i < max; i +=8) {
-        var week_day = data.list[i].dt_txt,
+        var date = data.list[i].dt_txt,
             type_weather = data.list[i].weather[0].icon,
             title_weather = data.list[i].weather[0].description,
             max_t = data.list[i].main.temp_max,
@@ -253,7 +177,7 @@ function getWeek( data ) {
             pressure = data.list[i].main.pressure;
 
         w += `<article class="widget-weather__forecast">
-          <h6>${getNamesDay(week_day)}</h6>
+          <h6>${getNamesDay(date)}</h6>
           <div class="widget-weather__forecast-wrapper-illustration" title="${title_weather}">
             <img
               id="type_weather"
