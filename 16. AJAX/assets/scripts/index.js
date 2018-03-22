@@ -1,5 +1,5 @@
-function getData( id ) {
-    let url = "http://api.openweathermap.org/data/2.5/forecast?id=" + id + "&units=metric&APPID=cbb3210df49fdf1c3c675a785e42454b";
+function getData( city ) {
+    let url = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&APPID=cbb3210df49fdf1c3c675a785e42454b";
     
     fetch( url ).then(async function(
         data
@@ -205,4 +205,25 @@ function getWeek( data ) {
 
     week.innerHTML = w;
     elems[0].setAttribute("class", "widget-weather__forecast widget-weather__forecast_active");
+}
+
+
+
+function downloadTodayNode() {
+  var city = document.getElementById("search_input"),
+    city = city.getAttribute("value");
+    console.log(city);
+	var url = `http://localhost:3000/weather/${city}`
+    fetch(url)
+    .then(async function (data){
+      var data = await data.json();
+      
+      if (data.code == 404) {
+          getData( city );
+      } else {
+
+      }
+
+    })
+    .catch(err=>console.log(err))
 }

@@ -12,8 +12,6 @@
 
   <!-- stylesheet -->
   <link rel="stylesheet" href="./assets/stylesheets/main.css">
-
-  <script src="./assets/scripts/index.js"></script>
 </head>
 <body>
   <header class="header">
@@ -23,19 +21,23 @@
       <form
         action="/"
         class="form-search"
+        id="forms"
       >
         <fieldset class="form-search__fieldset">
             <input
+              id="search_input"
               class="form-search__input"
-              name="search"
+              name="cityName"
               type="text"
               placeholder="Введите запрос"
               autofocus
+              value="London"
             />
         </fieldset>
         <button
           class="form-search__btn-send-data"
-          type="submit"
+          type="button"
+          onclick="downloadTodayNode()"
         >
           Поиск
         </button>
@@ -48,16 +50,16 @@
       <h3>Навигация</h3>
       <ul class="nav__list">
         <li class="nav__item">
-          <a onclick="getData( 500096 )">Ryazan</a>
+          <a onclick="getData( 'Ryazan' )">Ryazan</a>
         </li>
         <li class="nav__item">
-          <a onclick="getData( 2643743 )">London</a>
+          <a onclick="getData( 'London' )">London</a>
         </li>
         <li class="nav__item">
-          <a onclick="getData( 5128581 )">New York</a>
+          <a onclick="getData( 'New York' )">New York</a>
         </li>
         <li class="nav__item">
-          <a onclick="getData( 524901 )">Moscow</a>
+          <a onclick="getData( 'Moscow' )">Moscow</a>
         </li>
       </ul>
     </nav>
@@ -243,5 +245,6 @@
       © 2018 <a target="_blank" href="https://zaytsevaleksandrv.github.io/zav/">azaytsev</a>
     </p>
   </footer>
+  <script src="./assets/scripts/index.js"></script>
 </body>
 </html>
