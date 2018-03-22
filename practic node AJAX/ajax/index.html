@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="https://github.com/zaytsevaleksandrv/training">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flexbox - weather</title>
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="./assets/stylesheets/main.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Weather</h1>
+
+    <div class="wrapper__form-search">
+      <form
+        action="/"
+        class="form-search"
+        id="forms"
+      >
+        <fieldset class="form-search__fieldset">
+            <input
+              id="search_input"
+              class="form-search__input"
+              name="cityName"
+              type="text"
+              placeholder="Введите запрос"
+              autofocus
+              
+            />
+        </fieldset>
+        <button
+          class="form-search__btn-send-data"
+          type="button"
+          onclick="downloadTodayNode()"
+        >
+          Поиск
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <nav class="nav">
+      <h3>Навигация</h3>
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a onclick="getData( 'Ryazan' )">Ryazan</a>
+        </li>
+        <li class="nav__item">
+          <a onclick="getData( 'London' )">London</a>
+        </li>
+        <li class="nav__item">
+          <a onclick="getData( 'New York' )">New York</a>
+        </li>
+        <li class="nav__item">
+          <a onclick="getData( 'Moscow' )">Moscow</a>
+        </li>
+      </ul>
+    </nav>
+
+    <article class="widget-weather">
+      <div id="widget_header">
+        <h1 id="widget-weather__header">Izhevsk, Udmurt Republic</h1>
+        
+        <section class="widget-weather__wrapper-time-and-type-weather">
+          <time id="widget-weather__time" class="widget-weather__time" datetime="2018-01-14">Sunday, January 14</time>
+          <p id="widget-weather__type-weather" class="widget-weather__type-weather">Cloudy</p>
+        </section>
+        
+        <section class="widget-weather__wrapper-data">
+          <figure class="widget-weather__illustration-type-weather">
+            <img id="widget-weather__illustration" class="widget-weather__illustration" src="./assets/media/img/snowflake.png" alt="snowflake">
+            <figcaption class="widget-weather__temperature">
+              <h2>
+                <span id="widget-weather__temperature">-11</span>
+                <sup class="widget-weather__unit">°C</sup>
+              </h2>
+            </figcaption>
+          </figure>
+          <ul class="widget-weather__list-parameters">
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Pressure:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__pressure">0</span>%
+                </span>
+              </p>
+            </li>
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Humidity:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__humidity">80</span>%
+                </span>
+              </p>
+            </li>
+            <li class="widget-weather__inner">
+              <p class="widget-weather__name-parameter">
+                Wind:
+                <span class="widget-weather__value-parameter">
+                  <span id="widget-weather__speed">0</span> m/s
+                </span>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="widget-weather__wrapper-forecast-for-week" id="week">
+        <article class="widget-weather__forecast widget-weather__forecast_active">
+          <h6>Today</h6>
+          <div class="widget-weather__forecast-wrapper-illustration">
+            <img
+              class="widget-weather__forecast-illustration"
+              src="./assets/media/img/snowflake.png"
+              alt="snowflake"
+            >
+          </div>
+          <footer class="widget-weather__forecast-footer">
+            <section class="widget-weather__forecast-wrapper-degrees">
+              <p class="widget-weather__forecast-degrees">
+                -11°
+              </p>
+              <p class="widget-weather__forecast-to-degrees">
+                -16°
+              </p>
+            </section>
+            <p class="widget-weather__forecast-sense">
+              Pollen 36
+            </p>
+          </footer>
+        </article>
+
+        <article class="widget-weather__forecast">
+          <h6>Wednesday</h6>
+          <div class="widget-weather__forecast-wrapper-illustration">
+            <img
+              class="widget-weather__forecast-illustration"
+              src="./assets/media/img/snowflake.png"
+              alt="snowflake"
+            >
+          </div>
+          <footer class="widget-weather__forecast-footer">
+            <section class="widget-weather__forecast-wrapper-degrees">
+              <p class="widget-weather__forecast-degrees">
+                -11°
+              </p>
+              <p class="widget-weather__forecast-to-degrees">
+                -16°
+              </p>
+            </section>
+            <p class="widget-weather__forecast-sense">
+              Pollen 36
+            </p>
+          </footer>
+        </article>
+
+        <article class="widget-weather__forecast">
+          <h6>Thursday</h6>
+          <div class="widget-weather__forecast-wrapper-illustration">
+            <img
+              class="widget-weather__forecast-illustration"
+              src="./assets/media/img/cloudrain.png"
+              alt="cloudrain"
+            >
+          </div>
+          <footer class="widget-weather__forecast-footer">
+            <section class="widget-weather__forecast-wrapper-degrees">
+              <p class="widget-weather__forecast-degrees">
+                -11°
+              </p>
+              <p class="widget-weather__forecast-to-degrees">
+                -16°
+              </p>
+            </section>
+            <p class="widget-weather__forecast-sense">
+              Pollen 36
+            </p>
+          </footer>
+        </article>
+
+        <article class="widget-weather__forecast">
+          <h6>Friday</h6>
+          <div class="widget-weather__forecast-wrapper-illustration">
+            <img
+              class="widget-weather__forecast-illustration"
+              src="./assets/media/img/rain.png"
+              alt="rain"
+            >
+          </div>
+          <footer class="widget-weather__forecast-footer">
+            <section class="widget-weather__forecast-wrapper-degrees">
+              <p class="widget-weather__forecast-degrees">
+                -11°
+              </p>
+              <p class="widget-weather__forecast-to-degrees">
+                -16°
+              </p>
+            </section>
+            <p class="widget-weather__forecast-sense">
+              Pollen 36
+            </p>
+          </footer>
+        </article>
+
+        <article class="widget-weather__forecast">
+          <h6>Saturday</h6>
+          <div class="widget-weather__forecast-wrapper-illustration">
+            <img
+              class="widget-weather__forecast-illustration"
+              src="./assets/media/img/suncloud.png"
+              alt="suncloud"
+            >
+          </div>
+          <footer class="widget-weather__forecast-footer">
+            <section class="widget-weather__forecast-wrapper-degrees">
+              <p class="widget-weather__forecast-degrees">
+                -11°
+              </p>
+              <p class="widget-weather__forecast-to-degrees">
+                -16°
+              </p>
+            </section>
+            <p class="widget-weather__forecast-sense">
+              Pollen 36
+            </p>
+          </footer>
+        </article>
+      </section>
+    </article>
+
+    <aside class="aside">
+      <h3>Реклама</h3>
+      <div class="advertising"></div>
+    </aside>
+  </main>
+  <footer class="footer">
+    <p>
+      © 2018 <a target="_blank" href="https://zaytsevaleksandrv.github.io/zav/">azaytsev</a>
+    </p>
+  </footer>
+  <script src="./assets/scripts/index.js"></script>
+</body>
+</html>
