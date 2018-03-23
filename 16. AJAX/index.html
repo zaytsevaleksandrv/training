@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,32 +14,17 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="./assets/stylesheets/main.css">
 </head>
+
 <body>
   <header class="header">
     <h1 class="header__title">Weather</h1>
 
     <div class="wrapper__form-search">
-      <form
-        action="/"
-        class="form-search"
-        id="forms"
-      >
+      <form action="/" class="form-search" id="forms">
         <fieldset class="form-search__fieldset">
-            <input
-              id="search_input"
-              class="form-search__input"
-              name="cityName"
-              type="text"
-              placeholder="Введите запрос"
-              autofocus
-              value="London"
-            />
+          <input id="search_input" class="form-search__input" name="cityName" type="text" placeholder="Введите запрос" autofocus />
         </fieldset>
-        <button
-          class="form-search__btn-send-data"
-          type="button"
-          onclick="downloadTodayNode()"
-        >
+        <button class="form-search__btn-send-data" type="button" onclick="downloadTodayNode()">
           Поиск
         </button>
       </form>
@@ -61,18 +47,27 @@
         <li class="nav__item">
           <a onclick="getData( 'Moscow' )">Moscow</a>
         </li>
+        <li class="nav__item">
+          <a onclick="getDataLocal( 'Vladivostok' )">Vladivostok</a>
+        </li>
+        <li class="nav__item">
+          <a onclick="getDataLocal( 'Dubai' )">Dubai</a>
+        </li>
+        <li class="nav__item">
+          <a onclick="getDataLocal( 'Tokio' )">Tokio</a>
+        </li>
       </ul>
     </nav>
 
     <article class="widget-weather">
       <div id="widget_header">
         <h1 id="widget-weather__header">Izhevsk, Udmurt Republic</h1>
-        
+
         <section class="widget-weather__wrapper-time-and-type-weather">
           <time id="widget-weather__time" class="widget-weather__time" datetime="2018-01-14">Sunday, January 14</time>
           <p id="widget-weather__type-weather" class="widget-weather__type-weather">Cloudy</p>
         </section>
-        
+
         <section class="widget-weather__wrapper-data">
           <figure class="widget-weather__illustration-type-weather">
             <img id="widget-weather__illustration" class="widget-weather__illustration" src="./assets/media/img/snowflake.png" alt="snowflake">
@@ -116,11 +111,7 @@
         <article class="widget-weather__forecast widget-weather__forecast_active">
           <h6>Today</h6>
           <div class="widget-weather__forecast-wrapper-illustration">
-            <img
-              class="widget-weather__forecast-illustration"
-              src="./assets/media/img/snowflake.png"
-              alt="snowflake"
-            >
+            <img class="widget-weather__forecast-illustration" src="./assets/media/img/snowflake.png" alt="snowflake">
           </div>
           <footer class="widget-weather__forecast-footer">
             <section class="widget-weather__forecast-wrapper-degrees">
@@ -140,11 +131,7 @@
         <article class="widget-weather__forecast">
           <h6>Wednesday</h6>
           <div class="widget-weather__forecast-wrapper-illustration">
-            <img
-              class="widget-weather__forecast-illustration"
-              src="./assets/media/img/snowflake.png"
-              alt="snowflake"
-            >
+            <img class="widget-weather__forecast-illustration" src="./assets/media/img/snowflake.png" alt="snowflake">
           </div>
           <footer class="widget-weather__forecast-footer">
             <section class="widget-weather__forecast-wrapper-degrees">
@@ -164,11 +151,7 @@
         <article class="widget-weather__forecast">
           <h6>Thursday</h6>
           <div class="widget-weather__forecast-wrapper-illustration">
-            <img
-              class="widget-weather__forecast-illustration"
-              src="./assets/media/img/cloudrain.png"
-              alt="cloudrain"
-            >
+            <img class="widget-weather__forecast-illustration" src="./assets/media/img/cloudrain.png" alt="cloudrain">
           </div>
           <footer class="widget-weather__forecast-footer">
             <section class="widget-weather__forecast-wrapper-degrees">
@@ -188,11 +171,7 @@
         <article class="widget-weather__forecast">
           <h6>Friday</h6>
           <div class="widget-weather__forecast-wrapper-illustration">
-            <img
-              class="widget-weather__forecast-illustration"
-              src="./assets/media/img/rain.png"
-              alt="rain"
-            >
+            <img class="widget-weather__forecast-illustration" src="./assets/media/img/rain.png" alt="rain">
           </div>
           <footer class="widget-weather__forecast-footer">
             <section class="widget-weather__forecast-wrapper-degrees">
@@ -212,11 +191,7 @@
         <article class="widget-weather__forecast">
           <h6>Saturday</h6>
           <div class="widget-weather__forecast-wrapper-illustration">
-            <img
-              class="widget-weather__forecast-illustration"
-              src="./assets/media/img/suncloud.png"
-              alt="suncloud"
-            >
+            <img class="widget-weather__forecast-illustration" src="./assets/media/img/suncloud.png" alt="suncloud">
           </div>
           <footer class="widget-weather__forecast-footer">
             <section class="widget-weather__forecast-wrapper-degrees">
@@ -242,9 +217,11 @@
   </main>
   <footer class="footer">
     <p>
-      © 2018 <a target="_blank" href="https://zaytsevaleksandrv.github.io/zav/">azaytsev</a>
+      © 2018
+      <a target="_blank" href="https://zaytsevaleksandrv.github.io/zav/">azaytsev</a>
     </p>
   </footer>
   <script src="./assets/scripts/index.js"></script>
 </body>
+
 </html>

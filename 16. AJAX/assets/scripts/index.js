@@ -207,23 +207,13 @@ function getWeek( data ) {
     elems[0].setAttribute("class", "widget-weather__forecast widget-weather__forecast_active");
 }
 
-
-
-function downloadTodayNode() {
-  var city = document.getElementById("search_input"),
-    city = city.getAttribute("value");
-    console.log(city);
-	var url = `http://localhost:3000/weather/${city}`
+//server
+function getDataLocal(city) {
+	var url = `http://localhost:3001/${city}`
     fetch(url)
     .then(async function (data){
-      var data = await data.json();
-      
-      if (data.code == 404) {
-          getData( city );
-      } else {
-
-      }
-
-    })
-    .catch(err=>console.log(err))
-}
+        var data = await data.json();
+            getHeader(data); 
+            getWeek(data);
+    });
+};
